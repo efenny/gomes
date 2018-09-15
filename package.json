@@ -17,5 +17,10 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1"
-  }
+  },
+  "sasslintConfig": "sass-lint.yml",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efenny/gomes.git"
+  },
 }
