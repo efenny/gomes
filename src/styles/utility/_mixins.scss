@@ -1,0 +1,189 @@
+// Mixin Style Sheet
+/*************************
+MEDIA QUERY (MQ)
+*************************/
+@import 'breakpoint';
+
+/*************************
+MEDIA QUERY (MQ)
+*************************/
+
+// gutter padding
+@mixin side-gutters {
+    padding-left: ($col-vw * 1) !important;
+    padding-right: ($col-vw * 1) !important;
+
+    @include breakpoint($tablet-break) {
+        padding-left: ($col-vw * 1) !important;
+        padding-right: ($col-vw * 1) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-left: $col-vw !important;
+        padding-right: $col-vw !important;
+    }
+}
+
+@mixin side-gutters-lrg {
+    padding-left: ($col-vw * 2) !important;
+    padding-right: ($col-vw * 2) !important;
+
+    @include breakpoint($tablet-break) {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-left: $col-vw !important;
+        padding-right: $col-vw !important;
+    }
+}
+
+// padding top
+@mixin padding-top($pad) {
+    padding-top: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-top: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-top: $pad * 2;
+    }
+}
+
+// padding bottom
+@mixin padding-bottom($pad) {
+    padding-bottom: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-bottom: $pad * 1.5;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-bottom: $pad * 2;
+    }
+}
+
+// padding top
+@mixin s-padding-top($pad) {
+    padding-top: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-top: $pad * 0.8;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-top: $pad * 0.4;
+    }
+}
+
+// padding bottom
+@mixin s-padding-bottom($pad) {
+    padding-bottom: $pad;
+
+    @include breakpoint($tablet-break) {
+        padding-bottom: $pad * 0.8;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-bottom: $pad * 0.4;
+    }
+}
+
+// margin top
+@mixin s-margin-top($pad) {
+    margin-top: $pad;
+
+    @include breakpoint($tablet-break) {
+        margin-top: $pad * 0.8;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-top: $pad * 0.4;
+    }
+}
+
+// margin bottom
+@mixin s-margin-bottom($pad) {
+    margin-bottom: $pad;
+
+    @include breakpoint($tablet-break) {
+        margin-bottom: $pad * 0.8;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-bottom: $pad * 0.4;
+    }
+}
+
+// margin top
+@mixin margin-top($margin) {
+    margin-top: $margin !important;
+
+    @include breakpoint($tablet-break) {
+        margin-top: ($margin * 1.5) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-top: ($margin * 2) !important;
+    }
+}
+
+// margin bottom
+@mixin margin-bottom($margin) {
+    margin-bottom: $margin !important;
+
+    @include breakpoint($tablet-break) {
+        margin-bottom: ($margin * 1.5) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        margin-bottom: ($margin * 2) !important;
+    }
+}
+
+// padding shorts
+@mixin paddings {
+    &.s-top {
+        @include s-padding-top($standard);
+    }
+
+    &.s-bottom {
+        @include s-padding-bottom($standard);
+    }
+
+    &.s-top-half {
+        @include s-padding-top($standard / 2);
+    }
+
+    &.s-bottom-half {
+        @include s-padding-bottom($standard / 2);
+    }
+
+    &.c-top {
+        @include padding-top($col-vw);
+    }
+
+    &.c-bottom {
+        @include padding-bottom($col-vw);
+    }
+
+    &.c-top-half {
+        @include padding-top($col-vw / 2);
+    }
+
+    &.c-bottom-half {
+        @include padding-bottom($col-vw / 2);
+    }
+}

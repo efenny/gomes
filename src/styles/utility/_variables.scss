@@ -1,0 +1,37 @@
+// Variables Style Sheet
+/* Colours */
+$color1: #000000; //orange
+$color-hover: #000000;
+$color-active: #000000;
+
+$color-p: #000000;
+$text-gray: #A4A3A6;
+$white: #FFFFFF;
+$gray: #F7F7F7;
+$black: #000000;
+$shadow: rgba(0, 0, 0, 0.16);
+
+/* Spacing / Padding */
+
+$col: 100% / 12;
+$col-vw: 100vw / 12;
+
+$standard: 200px;
+
+$p-space: 3rem;
+
+//transitions
+$transition: 0.5s ease;
+$transition-slow: 0.7s ease;
+$transition-slower: 1.25s ease;
+
+// border thickness
+$border-width: 2px;
+
+// common device break points
+$desktop-break: 1920px;
+$laptop-break: 1440px;
+$laptop-break-sml: 1250px;
+$tablet-break: 1024px;
+$mobile-break: 650px;
+$mobile-break-sml: 340px;

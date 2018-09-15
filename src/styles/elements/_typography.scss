@@ -1,0 +1,86 @@
+// Typography Style Sheet
+html {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint($tablet-break) {
+        font-size: 16px;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 14px;
+    }
+}
+
+body {
+    font: $body-font;
+    font-size: 100%;
+    color: $color-p;
+    margin: 0;
+    padding: 0;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+h1 {
+    @include breakpoint($tablet-break) {
+        font-size: 3.5rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    @include breakpoint($tablet-break) {
+        font-size: 2rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 1.8rem;
+    }
+}
+
+h3 {
+    @include breakpoint($tablet-break) {
+        font-size: 1.125rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 1.15rem;
+    }
+}
+
+h4 {
+    @include breakpoint($tablet-break) {
+        font-size: 1.25rem;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        font-size: 1.5rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: $color1;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-decoration: none;
+}

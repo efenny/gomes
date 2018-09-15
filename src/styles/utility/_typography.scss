@@ -1,0 +1,95 @@
+// Typography Base Style Sheet
+
+/*********************
+FONT FACE
+*********************/
+@import url('https://fonts.googleapis.com/css?family=Nunito|PT+Serif');
+
+// font stacks
+$sans-serif: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: 'PT Serif', 'Georgia', Cambria, Times New Roman, Times, serif;
+
+// theme fonts
+$body-font: 400 1rem / 1.6em $sans-serif;
+$h1: 400 4.5rem / 1.2em $serif;
+$h2: 400 2.5rem / 1.4em $serif;
+$h3: 400 1.5rem / 1.4em $serif;
+$h4: 400 1.25rem / 1.4em $sans-serif;
+$h5: 400 1rem / 1.6em $serif;
+$h6: 400 1rem / 1.6em $serif;
+$menu: 400 1rem / 1em $sans-serif;
+
+// Setting universal font styles
+
+h1,
+.h1 {
+    margin: 0;
+    font: $h1;
+}
+
+h2,
+.h2 {
+    margin: 0;
+    font: $h2;
+    color: $color1;
+}
+
+h3,
+.h3 {
+    margin: 0;
+    font: $h3;
+}
+
+h4,
+.h4 {
+    margin: 0;
+    font: $h4;
+}
+
+h5,
+.h5 {
+    margin: 0;
+    font: $h5;
+    text-decoration: underline;
+}
+
+h6,
+.h6 {
+    margin: 0;
+    font: $h6;
+}
+
+p {
+    font: $body-font;
+    word-break: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    margin-bottom: 1em;
+    width: 100%;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    // cleaning up the ragged lines and breaks
+    // -webkit-hyphens: auto; 
+    // -moz-hyphens: auto;
+    // hyphens: auto;
+
+    // sets a minimum number of characters before and after the break
+    // -webkit-hyphenate-before: 2;
+    // -webkit-hyphenate-after: 3;
+    // hyphenate-lines: 3;
+
+    // enabling fancy ligatures when available
+    //   -webkit-font-feature-settings: 'liga', 'dlig';
+    //    -moz-font-feature-settings: 'liga=1, dlig=1';
+    //       -ms-font-feature-settings: 'liga', 'dlig';
+    //        -o-font-feature-settings: 'liga', 'dlig';
+    //           font-feature-settings: 'kern' 1, 'dlig' 1;
+}
+
+::selection {
+    background: $color1;
+    color: $white;
+}

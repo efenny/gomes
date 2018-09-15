@@ -1,0 +1,17 @@
+@import 'utility/breakpoint';
+@import 'utility/variables';
+@import 'utility/typography';
+@import 'utility/mixins';
+@import 'pages/base';
+
+.home {
+    @import 'pages/home';
+}
+
+.page-id-5 {
+    @import 'pages/gallery';
+}
+
+@media print {
+    @import 'utility/print';
+}

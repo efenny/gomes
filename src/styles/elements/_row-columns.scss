@@ -1,0 +1,109 @@
+// Row and Columns Style Sheet
+// text wrapper
+.text-wrapper {
+    &.med {
+        text-align: center;
+
+        p {
+            max-width: 50%;
+            display: inline-block;
+
+            @include breakpoint($tablet-break) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+// image wrapper
+.img-wrapper {
+    img {
+        width: 100%;
+    }
+}
+
+// rows
+.row {
+    background-size: cover;
+    background-position: center;
+
+    @include side-gutters;
+
+    .row {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .row-inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // padding
+    @include paddings;
+
+    &.gray {
+        background-color: $gray;
+    }
+
+    &.white {
+        background-color: $white;
+    }
+
+    // content alignment
+
+    &.text-center,
+    &.center-text {
+        text-align: center;
+    }
+
+    &.center {
+        .row-inner {
+            justify-content: center;
+        }
+    }
+
+    &.align-center {
+        .row-inner {
+            align-items: center;
+        }
+    }
+}
+
+// columns
+.col {
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint($tablet-break) {
+        width: 100% !important;
+    }
+
+
+    @include paddings;
+
+    &.text {
+        padding-left: $col-vw;
+        padding-right: $col-vw;
+
+        @include breakpoint($tablet-break) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &.text-center,
+    &.center-text {
+        text-align: center;
+    }
+
+    @mixin width($width) {
+        width: calc(100% / 12 * #{$width});
+    }
+
+    @for $i from 1 through 12 {
+        &.col-#{$i} {
+            @include width($i);
+        }
+    }
+}
