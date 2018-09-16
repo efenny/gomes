@@ -12,7 +12,10 @@
   "author": "Erik Freundorfer",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
     "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
@@ -22,5 +25,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/efenny/gomes.git"
-  },
+  }
 }

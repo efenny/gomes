@@ -1,0 +1,23 @@
+<header>
+	<section class='row'>
+	 	<div class='row-inner'>
+	 		<div class='col logo col-4'>
+	 		 	<div class='col-inner'>
+	 		 		<a href="{{ site.url }}"><h3 data-character-slide="Dominic Gomes" >Dominic Gomes</h3></a>
+	 		 	</div>
+	 		</div>
+	 		<div class='col menu col-8'>
+	 		 	<div class='col-inner'>
+	 		 		{% include "menu.twig" with {'menu': menu.get_items} %}
+	 		 		<div class="mobile-button">
+	 		 			<div class="bars">
+	 		 				<div></div>
+	 		 				<div></div>
+	 		 				<div></div>
+	 		 			</div>
+	 		 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+</header>

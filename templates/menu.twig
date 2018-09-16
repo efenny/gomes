@@ -2,8 +2,7 @@
 	<ul>
 	{% for item in menu %}
 		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'menu': item.get_children} %}
+			<a target="{{ item.target }}" href="{{ item.link }}" data-hover-slide-up="{{ item.title }}">{{ item.title }}</a>
 		</li>
 	{% endfor %}
 	</ul>

@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
+    babel = require('gulp-babel');
 
 var scssSource = ['src/styles/main.scss'],
     scssWatch = ['src/styles/**/*.scss'],
@@ -20,8 +21,11 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
     return gulp.src(javascriptSource)
-        .pipe(uglify())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('main.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
 });
 

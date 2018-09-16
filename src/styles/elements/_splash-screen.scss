@@ -1,0 +1,129 @@
+// Splash Screen Style Sheet
+body {
+    .row {
+        &.splash {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            align-items: center;
+            background: $white;
+            z-index: 99;
+
+            // display: flex;
+
+            @at-root {
+                @keyframes splashFade {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                }
+            }
+
+            .col {
+                width: 1120px;
+
+                @include breakpoint($laptop-break) {
+                    width: $col-vw * 7;
+                }
+
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 9;
+                }
+
+
+                .col-inner {
+                    h1 {
+                        > span {
+                            display: inline-block;
+                            transform: translateY(0.65em);
+                            opacity: 0;
+                            transition: $transition;
+
+                            @at-root {
+                                @keyframes slideUp {
+                                    0% {
+                                        transform: translateY(0.65em) skewY(3deg);
+                                        opacity: 0;
+                                    }
+
+                                    100% {
+                                        transform: translateY(0) skewY(0);
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+                            @at-root {
+                                @keyframes slideUpUp {
+                                    0% {
+                                        transform: translateY(0);
+                                        opacity: 1;
+                                    }
+
+                                    100% {
+                                        transform: translateY(-0.65em);
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:first-child {
+                            > span {
+                                @for $i from 1 through 20 {
+                                    &:nth-child(#{$i}) {
+                                        animation-delay: #{$i / 15 + 0.5}s;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            > span {
+                                @for $i from 1 through 60 {
+                                    &:nth-child(#{$i}) {
+                                        animation-delay: #{$i / 15 + 1.75}s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.first-visit {
+        .row {
+            &.splash {
+                display: flex;
+                animation: splashFade $transition-slow 4.2s forwards;
+
+                h1 {
+                    animation: slideUpUp $transition-slow 4s forwards;
+
+                    span {
+                        animation: slideUp $transition-slow forwards;
+                    }
+                }
+            }
+        }
+    }
+
+    &.visited {
+        .row {
+            &.splash {
+                display: none;
+            }
+        }
+    }
+}
