@@ -1,0 +1,52 @@
+// Contact Style Sheet
+.row {
+    &.contact {
+        .row-inner {
+            min-height: calc(100vh - 200px);
+            justify-content: center;
+
+            @include breakpoint($tablet-break) {
+                align-items: center;
+            }
+
+
+            .col {
+                @include s-padding-top($standard);
+
+                @include breakpoint($tablet-break) {
+                    padding-top: 0 !important;
+                }
+
+
+                a {
+                    h2 {
+                        position: relative;
+                        display: inline-block;
+                        width: auto;
+                        overflow: hidden;
+
+                        &::before {
+                            content: '';
+                            width: 100%;
+                            height: 2px;
+                            background: $black;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            transform: translateX(-101%);
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover {
+                        h2 {
+                            &::before {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

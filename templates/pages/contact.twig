@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	<section class='row contact'>
+	 	<div class='row-inner'>
+	 		<div class='col col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h1(page.page_title) }}
+	 		 		<a href="mailto:{{ page.email }}"><h2>{{ page.email }}</h2></a>
+	 		 	</div>
+	 		</div>
+
+	 		<div class='col col-6'>
+	 		 	<div class='col-inner'>
+	 		 		
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+{% endblock %}

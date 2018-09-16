@@ -9,9 +9,11 @@
 		{% include 'partial/splash-screen.twig' %}
 		<main id="main">
 			{% include 'partial/header.twig' %}
-			{% block content %}
-				Sorry, no content
-			{% endblock %}
+			<div class="content">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
 			{% include 'footer.twig' %}
 		</main>
 		<script type="text/javascript" src="{{ site.theme.link }}/dist/js/main.min.js"></script>

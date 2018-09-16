@@ -1,9 +1,8 @@
 <?php
 /**
- * Template Name: Migrants
- * Template Post Type: post
+ * Template Name: Contact
  */
-$template = '/pages/migrants.twig';
+$template = '/pages/contact.twig';
 $context['posts'] = new Timber\PostQuery();
 $context = Timber::get_context();
 

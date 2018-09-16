@@ -64,11 +64,10 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
+		$context['page'] = new Timber\Post(get_the_ID());
 		$context['menu'] = new Timber\Menu();
 		$context['site'] = $this;
+		$context['options'] = get_fields('options');
 		return $context;
 	}
 
@@ -94,3 +93,15 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}

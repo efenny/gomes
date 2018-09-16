@@ -8,8 +8,16 @@
     @import 'pages/home';
 }
 
-.page-id-5 {
+.page-id-x {
     @import 'pages/gallery';
+}
+
+.page-id-12 {
+    @import 'pages/about';
+}
+
+.page-id-14 {
+    @import 'pages/contact';
 }
 
 @media print {

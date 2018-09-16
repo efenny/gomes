@@ -39,13 +39,22 @@ const firstLoad = () => {
 	}
 }
 
-// Get a string and wrap each character with span
-const letterSpanWrapper = (str) => {
+// Get a string and wrap each word with span
+const wordSpanWrapper = (str) => {
 	let strSpans = [];
 	for (let char of str.split(' ')) {
-		strSpans.push(`<span>${char}</span>`)
+		strSpans.push(`<span data-word="${char}">${char}</span>`)
 	}
 	return strSpans.join(' ');
+}
+
+// Get a string and wrap each word with span
+const letterSpanWrapper = (str) => {
+	let strSpans = [];
+	for (let char of str.split('')) {
+		strSpans.push(`<span data-letter="${char}">${char}</span>`)
+	}
+	return strSpans.join('');
 }
 
 // get the elements that need to have their characters wrapped in span
@@ -53,7 +62,7 @@ function animateLetters() {
 	let allSelected = document.getElementsByClassName('character-slide');
 	
 	for (let item of allSelected) {
-		item.innerHTML = letterSpanWrapper(item.dataset.characterSlide);
+		item.innerHTML = wordSpanWrapper(item.dataset.characterSlide);
 	}
 }
 

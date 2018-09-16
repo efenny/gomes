@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	<section class='row about'>
+	 	<div class='row-inner'>
+	 		<div class='col'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.text) }}
+	 		 		<div class="social-wrapper">
+	 		 			{% for item in page.get_field('social_platforms') %}
+		 		 			<a href="{{ item.link.url }}" target="_blank">{{ ui.img(item.logo) }}</a>
+		 		 		{% endfor %}
+	 		 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+{% endblock %}

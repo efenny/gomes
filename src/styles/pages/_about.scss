@@ -1,0 +1,47 @@
+// About Style Sheet
+.row {
+    &.about {
+        .row-inner {
+            min-height: calc(100vh - 200px);
+            align-items: center;
+            justify-content: center;
+
+            .col {
+                width: ($col-vw * 3) !important;
+
+                @include breakpoint($laptop-break) {
+                    width: 60% !important;
+                }
+
+
+                @include breakpoint($tablet-break) {
+                    width: 80% !important;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100% !important;
+                }
+
+
+                .text-wrapper {
+                    padding-bottom: 3rem;
+                }
+
+                .social-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    a {
+                        padding: 1rem;
+
+                        .img-wrapper {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
