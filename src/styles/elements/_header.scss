@@ -8,7 +8,14 @@ header {
         width: 100%;
 
         .col {
-            &.logo {}
+            &.logo {
+                a {
+                    h3 {
+                        display: inline-block;
+                        width: auto;
+                    }
+                }
+            }
 
             &.menu {
                 ul {

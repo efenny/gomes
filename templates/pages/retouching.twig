@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	<section class='row retouching'>
+	 	<div class='row-inner'>
+	 		{% for item in page.get_field('images') %}
+	 			<article class="retouched" data-retina="{{ item.retina.url }}">
+	 				{{ ui.img(item.normal_display) }}
+	 			</article>
+	 		{% else %}
+	 			<h3>There are no images at the moment.</h3>
+	 		{% endfor %}
+	 	</div>
+	</section>
+{% endblock %}

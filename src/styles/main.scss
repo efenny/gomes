@@ -21,6 +21,10 @@
     @import 'pages/contact';
 }
 
+.page-id-8 {
+    @import 'pages/retouching';
+}
+
 @media print {
     @import 'utility/print';
 }

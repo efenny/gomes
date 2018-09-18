@@ -66,9 +66,27 @@ function animateLetters() {
 	}
 }
 
+function homeMasonry() {
+	var elem = document.querySelector('.row-inner');
+	var msnry = new Masonry( elem, {
+	  // options
+	  itemSelector: '.case-study'
+	});
+
+	// element argument can be a selector string
+	//   for an individual element
+	var msnry = new Masonry( '.grid', {
+	  // options
+	});
+}
+
 // fire when the page is fully loaded
 window.onload = function() {
 	firstLoad();
 	animateLetters();
+
+	// if(document.getElementsByTagName('body')[0].className.match('home')) {
+	// 	homeMasonry();
+	// }
 	
 }

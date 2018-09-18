@@ -1,13 +1,25 @@
 {% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-	<section class='row'>
+	<section class='row design'>
 	 	<div class='row-inner'>
-	 		<div class='col col-12'>
-	 		 	<div class='col-inner'>
-	 		 		test
-	 		 	</div>
-	 		</div>
+	 		{% for item in cases %}
+	 			<article class="case-study {{ function('slug', item.title) }} ">
+	 				<a href="{{ item.link }}">
+	 					<div class="case-study-inner">
+		 					<div class="bg" style="background-image:url('{{ TimberImage(item.thumbnail).src }}');">
+		 					</div>
+		 					<div class="info">
+		 						{{ ui.h3(item.title) }}
+		 						{{ ui.p(item.purpose) }}
+		 					</div>
+		 				</div>
+	 				</a>
+	 			</article>
+	 		{% else %}
+	 			<h3>There are no posts at the moment.</h3>
+	 		{% endfor %}
 	 	</div>
 	</section>
 {% endblock %}

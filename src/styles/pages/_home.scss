@@ -1,1 +1,37 @@
 // Home Style Sheet
+.row {
+    &.design {
+        @include padding-top($col-vw / 4);
+        @include padding-bottom($col-vw / 4);
+
+        .row-inner {
+            .case-study {
+                width: $col-vw * 4.75;
+                padding-bottom: $col-vw / 2;
+
+                .bg {
+                    width: 100%;
+                    height: $col-vw * 3.25;
+                    background-size: cover !important;
+                    background-position: center !important;
+                }
+
+                .info {
+                    text-align: center;
+                    padding: 2.5rem;
+
+                    h3 {
+                        padding-bottom: 1rem;
+                    }
+                }
+
+                &.blue-ocean,
+                &.the-francis-effect {
+                    .bg {
+                        height: $col-vw * 6.25;
+                    }
+                }
+            }
+        }
+    }
+}
