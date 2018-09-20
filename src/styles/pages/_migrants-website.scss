@@ -1,0 +1,185 @@
+// Migrants - Website Style Sheet
+.row {
+    &.page-title {
+        h1 {
+            max-width: 36rem;
+
+            @include breakpoint($tablet-break) {
+                max-width: 27rem;
+            }
+
+
+            @include breakpoint($mobile-break) {
+                max-width: 20rem;
+            }
+        }
+    }
+
+    &.intro {
+        .col {
+            @include text-width;
+        }
+
+        &::before {
+            content: '';
+            width: $col-vw * 10;
+            height: 2px;
+            background: $gray;
+            position: absolute;
+            bottom: 0;
+            left: $col-vw;
+        }
+    }
+
+    &.website {
+        @include side-gutters;
+
+        .col {
+            &.info {
+                .col-inner {
+                    @include breakpoint($tablet-break) {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+
+                    .text-wrapper {
+                        padding: ($standard / 2) 0;
+                        width: $col-vw * 3;
+
+                        @include breakpoint($tablet-break) {
+                            padding-top: 0;
+
+                            @include text-width;
+                        }
+                    }
+                }
+            }
+        }
+
+        .img-wrapper {
+            @include breakpoint($tablet-break) {
+                padding: 0 ($col-vw / 2);
+            }
+        }
+    }
+
+    &.mobile {
+        @include side-gutters-lrg;
+
+        .image-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include breakpoint($mobile-break) {
+                justify-content: center;
+            }
+
+
+            .image-item {
+                width: $col-vw * 2 + $col-vw / 3;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 3;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: $col-vw * 8;
+                }
+
+
+                @for $i from 1 through 2 {
+                    &:nth-child(#{$i + 1}) {
+                        padding-top: $col-vw / 2 * $i;
+                    }
+
+                    @include breakpoint($tablet-break) {
+                        &:nth-child(#{$i + 1}) {
+                            padding-top: $col-vw / 3 * 2 * $i;
+                        }
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        &:nth-child(#{$i + 1}) {
+                            padding-top: $col-vw * 2;
+                        }
+                    }
+                }
+
+                img {
+                    @include box-shadow;
+                }
+            }
+        }
+    }
+
+    &.background {
+        height: $col-vw * 5;
+        background-size: cover !important;
+        background-position: center !important;
+
+        @include breakpoint($laptop-break) {
+            height: $col-vw * 6.5;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            height: $col-vw * 9.5;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            height: $col-vw * 10;
+        }
+    }
+
+    &.phase-one {
+        @include s-padding-bottom($standard);
+
+        &::before {
+            content: '';
+            width: 2px;
+            height: $col-vw * 2.25;
+            position: absolute;
+            background: $black;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+    }
+
+    &.phase-one,
+    &.phase-two {
+        h2 {
+            @include s-margin-bottom($standard / 2);
+        }
+    }
+
+    &.color {
+        .color-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .colour-item {
+                width: $col-vw;
+                display: flex;
+                align-items: flex-end;
+                height: $col-vw * 1.5;
+
+                .text-wrapper {
+                    width: 100%;
+                    padding: 1rem;
+                    background: rgba(255, 255, 255, 0.25);
+
+                    p {
+                        color: $white;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,13 +1,100 @@
 {% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
 
 {% block content %}
-	<section class='row'>
+	{% include 'partial/page-title.twig' with { thumbnail: page.thumbnail, role: page.purpose, title: page.title } %}
+
+	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
-	 		<div class='col col-12'>
+	 		<div class='col text'>
 	 		 	<div class='col-inner'>
-	 		 		testerino
+	 		 		{{ ui.p(page.intro_text) }}
 	 		 	</div>
 	 		</div>
 	 	</div>
 	</section>
+
+	<section class='row website s-top s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col info col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.description) }}
+	 		 	</div>
+	 		</div>
+
+	 		<div class='col image col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.website_page, "box-shadow") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row mobile s-bottom lrg-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		<div class="image-wrapper">
+	 		 			{% for item in page.get_field('mobile_shots') %}
+	 		 				<div class="image-item">
+	 		 					{{ ui.img(item.image, "box-shadow") }}
+	 		 				</div>
+	 		 			{% endfor %}
+	 		 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row center responsive s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.responsive) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row background' style="background-image:url('{{ TimberImage(page.background).src }}');">
+	 	<div class='row-inner'>
+	 		
+	 	</div>
+	</section>
+
+	<section class='row new center s-top s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.new_content) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row phase-one'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h2("Phase 1") }}
+			 		{{ ui.img(page.phase_1) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row phase-two'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h2("Phase 2") }}
+			 		{{ ui.img(page.phase_2) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	{% include 'partial/color.twig' %}
+
+	{% include 'partial/end.twig' %}	
 {% endblock %}

@@ -3,6 +3,7 @@ html {
     font-size: 18px;
     margin: 0;
     padding: 0;
+    text-rendering: optimizeLegibility;
 
     @include breakpoint($tablet-break) {
         font-size: 16px;

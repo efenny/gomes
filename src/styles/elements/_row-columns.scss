@@ -17,8 +17,17 @@
 
 // image wrapper
 .img-wrapper {
+    line-height: 0;
+
     img {
         width: 100%;
+        line-height: 0;
+    }
+
+    &.box-shadow {
+        img {
+            @include box-shadow;
+        }
     }
 }
 
@@ -26,10 +35,11 @@
 .row {
     background-size: cover;
     background-position: center;
+    position: relative;
 
     @include side-gutters;
 
-    .row {
+    &.no-gutters {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
@@ -83,13 +93,7 @@
     @include paddings;
 
     &.text {
-        padding-left: $col-vw;
-        padding-right: $col-vw;
-
-        @include breakpoint($tablet-break) {
-            padding-left: 0;
-            padding-right: 0;
-        }
+        @include text-width;
     }
 
     &.text-center,

@@ -1,0 +1,15 @@
+<section class='row color s-top '>
+ 	<div class='row-inner'>
+ 		<div class='col col-12'>
+ 		 	<div class='col-inner'>
+ 		 		<div class="color-wrapper">
+ 		 			{% for item in page.get_field('colours') %}
+		 				<div class="colour-item" style="background: {{ item.hex }}">
+	 						{{ ui.p(item.hex) }}
+		 				</div>
+		 			{% endfor %}
+ 		 		</div>
+ 		 	</div>
+ 		</div>
+ 	</div>
+</section>

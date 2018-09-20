@@ -1,1 +1,50 @@
 // Page Title Style Sheet
+.row {
+    &.page-title {
+        height: $col-vw * 5;
+
+        @include breakpoint($laptop-break) {
+            height: $col-vw * 6;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            height: $col-vw * 13;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            height: $col-vw * 11;
+        }
+
+
+        .row-inner {
+            height: 100%;
+            align-items: flex-end;
+
+            @include breakpoint($tablet-break) {
+                align-items: center;
+            }
+
+
+            .col {
+                padding-bottom: $col-vw;
+
+                @include breakpoint($tablet-break) {
+                    padding-bottom: 0;
+                }
+
+
+                h1,
+                p {
+                    color: $white;
+                }
+
+                p {
+                    letter-spacing: calc(25em / 1000);
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

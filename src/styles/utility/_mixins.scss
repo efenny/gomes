@@ -7,6 +7,32 @@ MEDIA QUERY (MQ)
 /*************************
 MEDIA QUERY (MQ)
 *************************/
+@mixin box-shadow {
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.16);
+    transition: $transition;
+
+    &:hover {
+        box-shadow: 0 6px 21px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@mixin text-width {
+    width: ($col-vw * 3) !important;
+
+    @include breakpoint($laptop-break) {
+        width: ($col-vw * 4.5) !important;
+    }
+
+
+    @include breakpoint($tablet-break) {
+        width: ($col-vw * 6) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        width: ($col-vw * 10) !important;
+    }
+}
 
 // gutter padding
 @mixin side-gutters {
@@ -30,8 +56,8 @@ MEDIA QUERY (MQ)
     padding-right: ($col-vw * 2) !important;
 
     @include breakpoint($tablet-break) {
-        padding-left: ($col-vw * 2) !important;
-        padding-right: ($col-vw * 2) !important;
+        padding-left: ($col-vw * 1) !important;
+        padding-right: ($col-vw * 1) !important;
     }
 
 

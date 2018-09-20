@@ -1,9 +1,9 @@
 {% import 'partial/ui.twig' as ui %}
 
-<section class='row page-title'>
+<section class='row page-title' style="background-image:url('{{ TimberImage(thumbnail).src }}');">
  	<div class='row-inner'>
- 		<div class='lb-col'>
- 		 	<div class='lb-col-inner'>
+ 		<div class='col'>
+ 		 	<div class='col-inner'>
  		 		{{ ui.p(role) }}
  		 		{{ ui.h1(title) }}
  		 	</div>
