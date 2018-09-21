@@ -30,4 +30,123 @@
             }
         }
     }
+
+    &.end {
+        .lb-inner {
+            width: 100%;
+            position: relative;
+            text-align: center;
+
+            a {
+                img {
+                    height: 2.5rem;
+
+                    @include breakpoint($tablet-break) {
+                        height: 1.75rem;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        height: 1.75rem;
+                    }
+                }
+
+                &.prev {
+                    transition: $transition;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    span {
+                        padding-left: 2rem;
+                        opacity: 0;
+                        transition: $transition;
+
+                        @include breakpoint($tablet-break) {
+                            display: none;
+                        }
+                    }
+
+                    img {
+                        transform: rotate(180deg);
+                    }
+
+                    &:hover {
+                        transform: translateY(-50%) translateX(-1rem);
+
+                        @include breakpoint($mobile-break) {
+                            transform: translateY(-50%) translateX(-0.5rem);
+                        }
+
+
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &.next {
+                    transition: $transition;
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    span {
+                        padding-right: 2rem;
+                        opacity: 0;
+                        transition: $transition;
+
+                        @include breakpoint($tablet-break) {
+                            display: none;
+                        }
+                    }
+
+                    &:hover {
+                        transform: translateY(-50%) translateX(1rem);
+
+                        @include breakpoint($mobile-break) {
+                            transform: translateY(-50%) translateX(0.5rem);
+                        }
+
+
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &.all {
+                    position: relative;
+                    display: inline-block;
+                    width: auto;
+                    overflow: hidden;
+                    margin: 0 auto;
+
+                    &::before {
+                        content: '';
+                        width: 100%;
+                        height: 3px;
+                        background: $black;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transform: translateX(-101%);
+                        transition: $transition;
+                    }
+
+                    &:hover {
+                        &::before {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
