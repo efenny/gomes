@@ -13,6 +13,19 @@
             }
         }
     }
+
+    h2 {
+        padding-bottom: 2rem;
+
+        @include breakpoint($tablet-break) {
+            padding-bottom: 1.75rem;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-bottom: 1.5rem;
+        }
+    }
 }
 
 // image wrapper
