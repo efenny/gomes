@@ -1,6 +1,7 @@
 {% import 'partial/ui.twig' as ui %}
 
-<section class='row page-title' data-tablet="{{ TimberImage(tablet).src }}" data-mobile="{{ TimberImage(mobile).src }}" style="background-image:url('{{ TimberImage(thumbnail).src }}');">
+<style>.page-title {background-image: url('{{ TimberImage(thumbnail).src }}');}@media (max-width: 1024px) {.page-title {background-image: url('{{ TimberImage(tablet).src }}');}}@media (max-width: 600px) {.page-title {background-image: url('{{ TimberImage(mobile).src }}');}}</style>
+<section class='row page-title'>
  	<div class='row-inner'>
  		<div class='col'>
  		 	<div class='col-inner'>
