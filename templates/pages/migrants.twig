@@ -1,9 +1,6 @@
-{% extends "base.twig" %}
-{% import 'partial/ui.twig' as ui %}
+{% extends "pages/post-base.twig" %}
 
-{% block content %}
-	{% include 'partial/page-title.twig' with { thumbnail: page.thumbnail, role: page.purpose, title: page.title } %}
-
+{% block post %}
 	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
@@ -93,8 +90,4 @@
 	 		</div>
 	 	</div>
 	</section>
-
-	{% include 'partial/color.twig' %}
-
-	{% include 'partial/end.twig' %}	
 {% endblock %}

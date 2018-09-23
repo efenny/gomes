@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	{% include 'partial/page-title.twig' with { thumbnail: page.desktop_image, tablet: page.tablet_image, mobile: page.mobile_image, role: page.purpose, title: page.title } %}
+
+	{% block post %}
+		
+	{% endblock %}
+
+	{% include 'partial/color.twig' %}
+
+	{% include 'partial/end.twig' %}	
+{% endblock %}

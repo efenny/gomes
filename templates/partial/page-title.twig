@@ -1,6 +1,6 @@
 {% import 'partial/ui.twig' as ui %}
 
-<section class='row page-title' style="background-image:url('{{ TimberImage(thumbnail).src }}');">
+<section class='row page-title' data-tablet="{{ TimberImage(tablet).src }}" data-mobile="{{ TimberImage(mobile).src }}" style="background-image:url('{{ TimberImage(thumbnail).src }}');">
  	<div class='row-inner'>
  		<div class='col'>
  		 	<div class='col-inner'>

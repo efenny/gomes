@@ -1,0 +1,79 @@
+// Before & After Style Sheet
+.row {
+    &.before-after {
+        padding: 0 ($col-vw * 2.5) !important;
+
+        @include breakpoint($laptop-break) {
+            padding: 0 ($col-vw * 1.5) !important;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            padding: 0 $col-vw !important;
+        }
+
+
+        .col-inner {
+            text-align: center;
+
+            .text-wrapper {
+                padding-top: $col-vw / 2;
+                padding-bottom: $col-vw;
+
+                @include breakpoint($tablet-break) {
+                    padding-bottom: $col-vw * 1.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    padding-bottom: $col-vw;
+                }
+            }
+
+            .item-wrapper {
+                margin-bottom: $col-vw * 1.25;
+                position: relative;
+
+                @include breakpoint($tablet-break) {
+                    margin-bottom: $col-vw * 2.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    margin-bottom: $col-vw * 2.75;
+                }
+
+
+                .before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 60%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: 2;
+                }
+
+                .after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: 3;
+
+                    &::before {
+                        content: '';
+                        width: 2px;
+                        top: 0;
+                        right: -1px;
+                        background: $white;
+                        position: absolute;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

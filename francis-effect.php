@@ -1,10 +1,10 @@
 <?php
 /**
- * Template Name: Migrants
+ * Template Name: Francis Effect
  * Template Post Type: post
  */
-$template = '/pages/migrants.twig';
+$template = '/pages/francis-effect.twig';
 $context['posts'] = new Timber\PostQuery();
 $context = Timber::get_context();
 
-Timber::render( $template, $context );
+Timber::render( $template, $context ); 
