@@ -1,0 +1,169 @@
+// The Francis Effect Style Sheet
+.row {
+    &.page-title {
+        h1 {
+            max-width: 100%;
+
+            @include breakpoint($tablet-break) {
+                max-width: 27rem;
+            }
+
+
+            @include breakpoint($mobile-break) {
+                max-width: 20rem;
+            }
+        }
+
+        p,
+        h1 {
+            color: $black !important;
+        }
+    }
+
+    &.background {
+        height: $col-vw * 8;
+        background-size: cover !important;
+        background-position: center !important;
+
+        @include breakpoint($laptop-break) {
+            height: $col-vw * 8.5;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            height: $col-vw * 9.5;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            height: $col-vw * 10.5;
+        }
+    }
+
+    &.images-1 {
+        padding-bottom: $col-vw / 2;
+
+        .col-inner {
+            display: flex;
+            flex-wrap: warp;
+
+            .first {
+                width: $col-vw * 5.5;
+                margin-left: $col-vw * 1.5;
+
+                @include breakpoint($tablet-break) {
+                    margin-left: $col-vw;
+                }
+            }
+
+            .second {
+                width: $col-vw * 2.65;
+                margin-left: $col-vw / 2;
+                position: relative;
+                bottom: -$col-vw * 1.5;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 3.15;
+                }
+            }
+        }
+    }
+
+    &.images-2 {
+        padding-bottom: $col-vw / 2;
+
+        .col-inner {
+            display: flex;
+            flex-wrap: warp;
+
+            .third {
+                width: $col-vw * 4;
+                margin-left: $col-vw * 2;
+            }
+
+            .fourth {
+                width: $col-vw * 4.5;
+                margin-left: $col-vw / 2;
+                position: relative;
+                bottom: -$col-vw * 1.5;
+            }
+        }
+    }
+
+    &.images-3 {
+        padding-bottom: $col-vw * 1.5;
+
+        .col-inner {
+            display: flex;
+            flex-wrap: warp;
+
+            .fifth {
+                width: $col-vw * 5.5;
+                margin-left: $col-vw / 2;
+                position: relative;
+                top: -$col-vw / 3;
+            }
+
+            .sixth {
+                width: $col-vw * 3;
+                margin-left: $col-vw / 2;
+                position: relative;
+                bottom: -$col-vw * 1.5;
+            }
+        }
+    }
+
+    &.blu-ray {
+        .col-inner {
+            @include breakpoint($tablet-break) {
+                justify-content: center;
+                display: flex;
+            }
+        }
+
+        .text-wrapper {
+            @include text-width;
+        }
+    }
+
+    &.packaging {
+        padding-right: ($col-vw * 1.333) !important;
+        padding-left: ($col-vw * 1.333) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+
+        img {
+            @include breakpoint($tablet-break) {
+                width: calc(100% + #{$col-vw});
+                position: relative;
+                left: -$col-vw / 2;
+            }
+
+
+            @include breakpoint($mobile-break) {
+                width: 100%;
+                left: initial;
+            }
+        }
+    }
+
+    &.print {
+        padding-right: ($col-vw * 3) !important;
+        padding-left: ($col-vw * 3) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-right: ($col-vw * 2) !important;
+            padding-left: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-right: ($col-vw * 1) !important;
+            padding-left: ($col-vw * 1) !important;
+        }
+    }
+}

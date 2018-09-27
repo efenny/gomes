@@ -159,24 +159,70 @@
     }
 
     &.color {
-        .color-wrapper {
+        .col-inner {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
 
-            .colour-item {
-                width: $col-vw;
+            .color-wrapper {
                 display: flex;
-                align-items: flex-end;
-                height: $col-vw * 1.5;
+                justify-content: space-between;
+                width: $col-vw * 5;
 
-                .text-wrapper {
-                    width: 100%;
-                    padding: 1rem;
-                    background: rgba(255, 255, 255, 0.25);
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 8;
+                }
 
-                    p {
-                        color: $white;
-                        text-align: center;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 10;
+                }
+
+
+                .colour-item {
+                    width: $col-vw;
+                    display: flex;
+                    align-items: flex-end;
+                    height: $col-vw * 1.5;
+
+                    @include breakpoint($tablet-break) {
+                        width: $col-vw * 2;
+                        height: $col-vw * 3;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        height: $col-vw * 3.5;
+                        width: $col-vw * 3;
+                    }
+
+
+                    @include breakpoint($mobile-break-sml) {
+                        height: $col-vw * 4.25;
+                        width: $col-vw * 3;
+                    }
+
+
+                    &:hover {
+                        .text-wrapper {
+                            opacity: 0;
+                        }
+                    }
+
+                    .text-wrapper {
+                        width: 100%;
+                        padding: 1rem;
+                        background: rgba(255, 255, 255, 0.25);
+                        transition: $transition;
+
+                        @include breakpoint($mobile-break) {
+                            padding: 0.5rem;
+                        }
+
+
+                        p {
+                            color: $white;
+                            text-align: center;
+                        }
                     }
                 }
             }

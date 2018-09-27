@@ -1,5 +1,87 @@
 {% extends "pages/post-base.twig" %}
 
 {% block post %}
-	<h1>{{page.title}}</h1>		
+	<section class='row intro s-top center s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.journey) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row collage'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.collage) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row cards'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.card) }}
+	 		 		{{ ui.img(page.pamphlet) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row booklet-info s-top center s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.booklet_info) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-1 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_1) }}
+	 		 		{{ ui.img(page.image_2) }}
+	 		 		
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row images-2'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_3) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row images-3'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_4) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row s-top s-bottom grid center'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h2("Grid design") }}
+	 		 		{{ ui.img(page.grid_design) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
 {% endblock %}

@@ -1,13 +1,16 @@
 {% import 'partial/ui.twig' as ui %}
-<section class='row launch s-top s-bottom'>
- 	<div class='row-inner'>
- 		<div class='col col-12'>
- 		 	<div class='col-inner'>
- 		 		<a href="{{ page.end_launch_project.url }}">> LAUNCH WEBSITE</a>
- 		 	</div>
- 		</div>
- 	</div>
-</section>
+
+{% if page.end_outside_link %}
+	<section class='row launch s-top s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		<a href="{{ page.end_launch_project.url }}">> LAUNCH WEBSITE</a>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+{% endif %}
 
 <section class='row s-top-half s-bottom end'>
  	<div class='row-inner'>

@@ -9,7 +9,7 @@
 
 
         @include breakpoint($tablet-break) {
-            height: $col-vw * 13;
+            height: calc(100vh - 100px);
         }
 
 

@@ -33,6 +33,14 @@
     @import 'pages/migrants-website';
 }
 
+.postid-125 {
+    @import 'pages/migrants-marketing';
+}
+
+.postid-69 {
+    @import 'pages/francis-effect';
+}
+
 @media print {
     @import 'utility/print';
 }

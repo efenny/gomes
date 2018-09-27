@@ -32,6 +32,16 @@
     }
 
     &.end {
+        &::before {
+            content: '';
+            width: $col-vw * 10;
+            height: 2px;
+            background: $gray;
+            position: absolute;
+            top: 0;
+            left: $col-vw;
+        }
+
         .lb-inner {
             width: 100%;
             position: relative;

@@ -1,5 +1,102 @@
 {% extends "pages/post-base.twig" %}
 
 {% block post %}
-	<h1>{{page.title}}</h1>		
+	<section class='row intro s-top center s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.brothers) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row background' style="background-image:url('{{ TimberImage(page.background).src }}');">
+	 	<div class='row-inner'>
+	 		
+	 	</div>
+	</section>
+
+	<section class='row s-top center s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.poster_info) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row images-1 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_1, "first") }}
+	 		 		{{ ui.img(page.image_2, "second") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-2 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_3, "third") }}
+	 		 		{{ ui.img(page.image_4, "fourth") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-3 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_5, "fifth") }}
+	 		 		{{ ui.img(page.image_6, "sixth") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row s-top blu-ray s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.blu_ray) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row packaging no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.packaging) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row s-top center s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.box_set) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row print s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.print) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
 {% endblock %}
