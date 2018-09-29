@@ -91,6 +91,12 @@
             align-items: center;
         }
     }
+
+    &.align-end {
+        .row-inner {
+            align-items: end;
+        }
+    }
 }
 
 // columns

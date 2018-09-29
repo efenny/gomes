@@ -1,5 +1,72 @@
 {% extends "pages/post-base.twig" %}
 
 {% block post %}
-	<h1>{{page.title}}</h1>		
+	<section class='row intro s-top center s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.intro_text) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row website s-top s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col info col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.description) }}
+	 		 	</div>
+	 		</div>
+
+	 		<div class='col image col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.website_page, "box-shadow") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row mobile s-bottom lrg-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		<div class="image-wrapper">
+	 		 			{% for item in page.get_field('mobile_shots') %}
+	 		 				<div class="image-item">
+	 		 					{{ ui.img(item.image, "box-shadow") }}
+	 		 				</div>
+	 		 			{% endfor %}
+	 		 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row center responsive s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.responsive) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row tablet'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		<div class="image-wrapper">
+	 		 			{% for item in page.get_field('tablet_images') %}
+	 		 				{{ ui.img(item.image, "box-shadow") }}
+	 		 			{% endfor %}
+	 		 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	{% include 'partial/color.twig' %}
+
 {% endblock %}

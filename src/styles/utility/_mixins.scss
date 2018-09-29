@@ -19,6 +19,11 @@ MEDIA QUERY (MQ)
 @mixin text-width {
     width: ($col-vw * 3) !important;
 
+    @include breakpoint($desktop-break-sml) {
+        width: ($col-vw * 3.75) !important;
+    }
+
+
     @include breakpoint($laptop-break) {
         width: ($col-vw * 4.5) !important;
     }

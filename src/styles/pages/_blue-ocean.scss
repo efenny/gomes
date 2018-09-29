@@ -1,0 +1,215 @@
+// Blue Ocean Style Sheet
+.row {
+    &.page-title {
+        .col {
+            padding-bottom: $col-vw * 1.5;
+
+            @include breakpoint($tablet-break) {
+                padding-bottom: 0;
+            }
+
+
+            h1 {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &.logo {
+        padding: ($col-vw * 2.5) ($col-vw * 3) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+
+            @include s-padding-top($standard);
+            @include s-padding-bottom($standard);
+        }
+    }
+
+    &.background {
+        height: $col-vw * 8;
+        background-size: cover !important;
+        background-position: center !important;
+
+        @include breakpoint($laptop-break) {
+            height: $col-vw * 8.5;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            height: $col-vw * 9.5;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            height: $col-vw * 10.5;
+        }
+    }
+
+    &.logo-development {
+        .col-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .img-wrapper {
+                width: $col-vw * 3;
+                margin-bottom: $col-vw / 2;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 4.75;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: $col-vw * 8;
+                    margin: 0 $col-vw;
+                    margin-bottom: $col-vw;
+                }
+
+
+                &:nth-child(4) {
+                    margin-bottom: 0;
+                    margin-left: $col-vw * 1.75;
+
+                    @include breakpoint($tablet-break) {
+                        margin: 0;
+                        margin-bottom: $col-vw / 2;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        margin: 0 $col-vw;
+                        margin-bottom: $col-vw;
+                    }
+                }
+
+                &:nth-child(5) {
+                    margin-bottom: 0;
+                    margin-right: $col-vw * 1.75;
+
+                    @include breakpoint($tablet-break) {
+                        margin: 0;
+                        margin-left: $col-vw * 2.75;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        margin: 0 $col-vw;
+                    }
+                }
+            }
+        }
+    }
+
+    &.images-1 {
+        .col-inner {
+            display: flex;
+            flex-wrap: wrap;
+
+            .first {
+                width: $col-vw * 5.5;
+                margin-top: $col-vw * 1.25;
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    padding: 0 $col-vw;
+                    margin: 0;
+                }
+            }
+
+            .second {
+                width: $col-vw * 5.5;
+                margin-left: $col-vw;
+                overflow: hidden;
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    padding: $col-vw $col-vw 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &.images-2 {
+        padding-top: $col-vw;
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+
+        @include breakpoint($mobile-break) {
+            padding-left: $col-vw !important;
+            padding-right: $col-vw !important;
+        }
+    }
+
+    &.color-typ {
+        h3 {
+            font-family: $sans-serif;
+            padding-bottom: 2rem;
+
+            @include breakpoint($tablet-break) {
+                padding-bottom: 1.75rem;
+            }
+
+
+            @include breakpoint($mobile-break) {
+                padding-bottom: 1.5rem;
+            }
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 50% !important;
+
+            @include breakpoint($mobile-break) {
+                width: 100% !important;
+                padding: 0 $col-vw !important;
+            }
+
+
+            .col-inner {
+                width: 100%;
+            }
+
+            &.color {
+                padding-right: $col-vw;
+
+                @include breakpoint($laptop-break) {
+                    padding-right: $col-vw / 1.5;
+                }
+
+
+                @include breakpoint($tablet-break) {
+                    padding-right: $col-vw / 2;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    padding-bottom: $col-vw !important;
+                }
+
+
+                h3 {
+                    color: #0083CF;
+                }
+            }
+
+            &.typography {
+                padding-left: $col-vw;
+
+                @include breakpoint($laptop-break) {
+                    padding-left: $col-vw / 1.5;
+                }
+
+
+                @include breakpoint($tablet-break) {
+                    padding-left: $col-vw / 2;
+                }
+            }
+        }
+    }
+}

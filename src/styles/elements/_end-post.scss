@@ -57,7 +57,12 @@
 
 
                     @include breakpoint($mobile-break) {
-                        height: 1.75rem;
+                        height: 1.125rem;
+                    }
+
+
+                    @include breakpoint($mobile-break-sml) {
+                        height: 1rem;
                     }
                 }
 
@@ -69,6 +74,11 @@
                     left: 0;
                     top: 50%;
                     transform: translateY(-50%);
+
+                    @include breakpoint($mobile-break-sml) {
+                        left: -$col-vw / 2;
+                    }
+
 
                     span {
                         padding-left: 2rem;
@@ -106,6 +116,11 @@
                     right: 0;
                     top: 50%;
                     transform: translateY(-50%);
+
+                    @include breakpoint($mobile-break-sml) {
+                        right: -$col-vw / 2;
+                    }
+
 
                     span {
                         padding-right: 2rem;

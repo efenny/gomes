@@ -1,5 +1,88 @@
 {% extends "pages/post-base.twig" %}
 
 {% block post %}
-	<h1>{{page.title}}</h1>		
+	<section class='row intro align-center s-top s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col img col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.cover) }}
+	 		 	</div>
+	 		</div>
+	 		<div class='col info col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.editorial) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row background' style="background-image:url('{{ TimberImage(page.background).src }}');">
+	 	<div class='row-inner'>
+	 		
+	 	</div>
+	</section>
+
+
+	<section class='row inside-page'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.page) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row center responsive s-bottom s-top no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.grid) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row images-1 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_1, "first") }}
+	 		 		{{ ui.img(page.image_2, "second") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-2 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_3, "third") }}
+	 		 		{{ ui.img(page.image_4, "fourth") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-3'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_5, "fifth") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row grid s-bottom s-top align-end'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h2("Grid formats (spine left)") }}
+			 		{{ ui.img(page.grid_formats) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
 {% endblock %}

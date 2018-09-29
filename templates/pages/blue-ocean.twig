@@ -1,5 +1,89 @@
 {% extends "pages/post-base.twig" %}
 
 {% block post %}
-	<h1>{{page.title}}</h1>		
+	<section class='row intro s-top center no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.grow) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row logo '>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.logo) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row logo-development'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{% for item in page.get_field('logo_development') %}
+		 				{{ ui.img(item.image) }}
+		 			{% endfor %}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row center responsive s-bottom s-top no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.p(page.smooth) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-1 no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_1, "first") }}
+	 		 		{{ ui.img(page.image_2, "second") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>	
+
+	<section class='row images-2'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.img(page.image_3, "third") }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row background' style="background-image:url('{{ TimberImage(page.hand_drawn).src }}');">
+	 	<div class='row-inner'>
+	 		
+	 	</div>
+	</section>
+
+	<section class='row color-typ s-bottom s-top'>
+	 	<div class='row-inner'>
+	 		<div class='col color col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h3("Pantone 299 C<br>Hex #00A0DF") }}
+	 		 		{{ ui.img(page.color) }}
+	 		 	</div>
+	 		</div>
+	 		<div class='col typography col-6'>
+	 		 	<div class='col-inner'>
+	 		 		{{ ui.h3("Effra Bold") }}
+	 		 		{{ ui.img(page.typography) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
 {% endblock %}
