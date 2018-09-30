@@ -1,9 +1,27 @@
 // Retouching Style Sheet
 .row {
     &.retouching {
+        padding-left: ($col-vw / 4 * 3) !important;
+        padding-right: ($col-vw / 4 * 3) !important;
+
         @include padding-top($col-vw / 4);
         @include padding-bottom($col-vw / 4);
 
-        .row-inner {}
+        .row-inner {
+            display: block;
+
+            .retouched {
+                margin: 0 ($col-vw / 4);
+                margin-bottom: $col-vw / 2;
+
+                &.width-3 {
+                    width: $col-vw * 3;
+                }
+
+                &.width-6-5 {
+                    width: $col-vw * 6.5;
+                }
+            }
+        }
     }
 }

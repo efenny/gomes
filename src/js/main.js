@@ -1,31 +1,3 @@
-// which transition event to use
-function whichTransitionEvent(){
-    var t;
-    var el = document.createElement('fakeelement');
-    var transitions = {
-      'transition':'transitionend',
-      'OTransition':'oTransitionEnd',
-      'MozTransition':'transitionend',
-      'WebkitTransition':'webkitTransitionEnd'
-    }
-
-    for(t in transitions){
-        if( el.style[t] !== undefined ){ 
-            return transitions[t];
-        }
-    }
-}
-
-// check when element is finished animating
-const transitionEvent = whichTransitionEvent();
-const transtionEnded = (element, callback) => {
-	transitionEvent && element.addEventListener(transitionEvent, callback);
-}
-
-const splashStart = () => {
-	console.log('start');
-}
-
 // Check to see if the user has visited the page already
 const firstLoad = () => {
 	if(localStorage.getItem('visited') !== 'true') {
@@ -141,6 +113,20 @@ function beforeAfter() {
 	movement(items);
 }
 
+const homeMasonry = () => {
+	jQuery('.design .row-inner').masonry({
+	  itemSelector: '.case-study',
+	  columnWidth: 1,
+	});
+}
+
+const retouchedMasonry = () => {
+	jQuery('.retouching .row-inner').masonry({
+	  itemSelector: '.retouched',
+	  columnWidth: 1,
+	});
+}
+
 // fire when the page is fully loaded
 window.onload = function() {
 	firstLoad();
@@ -150,8 +136,12 @@ window.onload = function() {
 		beforeAfter();
 	}
 
-	// if(document.getElementsByTagName('body')[0].className.match('home')) {
-	// 	homeMasonry();
-	// }
+	if(document.getElementsByTagName('body')[0].className.match('page-id-8')) {
+		retouchedMasonry();
+	}
+
+	if(document.getElementsByTagName('body')[0].className.match('home')) {
+		homeMasonry();
+	}
 	
 }

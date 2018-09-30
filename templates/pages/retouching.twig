@@ -5,7 +5,7 @@
 	<section class='row retouching'>
 	 	<div class='row-inner'>
 	 		{% for item in page.get_field('images') %}
-	 			<article class="retouched" data-retina="{{ item.retina.url }}">
+	 			<article class="retouched width-{{ item.width }}" data-retina="{{ item.retina.url }}">
 	 				{{ ui.img(item.normal_display) }}
 	 			</article>
 	 		{% else %}
