@@ -13,6 +13,13 @@
             .retouched {
                 margin: 0 ($col-vw / 4);
                 margin-bottom: $col-vw / 2;
+                cursor: pointer;
+                box-shadow: 0 3px 9px rgba(255, 255, 255, 0.16);
+                transition: $transition;
+
+                &:hover {
+                    box-shadow: 0 6px 21px rgba(0, 0, 0, 0.1);
+                }
 
                 &.width-3 {
                     width: $col-vw * 3;

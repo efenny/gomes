@@ -3,7 +3,6 @@ const firstLoad = () => {
 	if(localStorage.getItem('visited') !== 'true') {
 		document.querySelector('body').classList.add('first-visit');
 		// If they haven't then run the splash page animation
-		splashStart();
 		localStorage.setItem('visited', 'true')
 	} else {
 		// If they have then go straight to the content
@@ -127,6 +126,17 @@ const retouchedMasonry = () => {
 	});
 }
 
+const modalActions = (elementClassName) => {
+	console.log('open modal');
+}
+
+const retouchedGalleries = () => {
+	jQuery('.gallery').each(function(){
+		jQuery(this).slick();
+	});
+}
+
+
 // fire when the page is fully loaded
 window.onload = function() {
 	firstLoad();
@@ -138,6 +148,11 @@ window.onload = function() {
 
 	if(document.getElementsByTagName('body')[0].className.match('page-id-8')) {
 		retouchedMasonry();
+		retouchedGalleries();
+	}
+
+	if(document.getElementsByTagName('body')[0].className.match('home')) {
+		homeMasonry();
 	}
 
 	if(document.getElementsByTagName('body')[0].className.match('home')) {
