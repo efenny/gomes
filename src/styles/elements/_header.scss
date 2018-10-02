@@ -26,6 +26,11 @@ header {
                     justify-content: flex-end;
                     list-style: none;
 
+                    @include breakpoint($tablet-break) {
+                        display: none;
+                    }
+
+
                     li {
                         padding: 0 2rem;
 
@@ -70,6 +75,17 @@ header {
                             }
                         }
                     }
+                }
+            }
+
+            .mobile-button {
+                display: none;
+                height: 2rem;
+                padding-right: 1rem;
+                align-items: center;
+
+                @include breakpoint($tablet-break) {
+                    display: flex;
                 }
             }
         }

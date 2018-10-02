@@ -25,11 +25,31 @@
                 //     }
                 // }
 
+                @include breakpoint($tablet-break) {
+                    padding-bottom: $col-vw / 4;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    padding-bottom: $col-vw / 2;
+                    width: $col-vw * 10;
+                }
+
+
                 .bg {
                     width: 100%;
                     height: $col-vw * 3.25;
                     background-size: cover !important;
                     background-position: center !important;
+
+                    @include breakpoint($tablet-break) {
+                        height: $col-vw * 3.5;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        height: $col-vw * 6.5;
+                    }
                 }
 
                 .info {
@@ -62,6 +82,15 @@
                 &.the-francis-effect {
                     .bg {
                         height: $col-vw * 6.25;
+
+                        @include breakpoint($tablet-break) {
+                            height: $col-vw * 6.5;
+                        }
+
+
+                        @include breakpoint($mobile-break) {
+                            height: $col-vw * 12.5;
+                        }
                     }
                 }
             }

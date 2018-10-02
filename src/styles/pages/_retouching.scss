@@ -7,6 +7,11 @@
         @include padding-top($col-vw / 4);
         @include padding-bottom($col-vw / 4);
 
+        @include breakpoint($mobile-break) {
+            padding-top: $col-vw * 2;
+        }
+
+
         .row-inner {
             display: block;
 
@@ -23,10 +28,31 @@
 
                 &.width-3 {
                     width: $col-vw * 3;
+
+                    @include breakpoint($mobile-break) {
+                        width: $col-vw * 6;
+                        margin: 0 ($col-vw * 2.25);
+                        margin-bottom: $col-vw;
+                    }
                 }
 
                 &.width-6-5 {
                     width: $col-vw * 6.5;
+
+                    @include breakpoint($mobile-break) {
+                        width: $col-vw * 8;
+                        margin: 0 ($col-vw * 1.25);
+                        margin-bottom: $col-vw;
+                    }
+                }
+
+                &:nth-child(4),
+                &:nth-child(6) {
+                    @include breakpoint($mobile-break) {
+                        width: $col-vw * 8;
+                        margin: 0 ($col-vw * 1.25);
+                        margin-bottom: $col-vw;
+                    }
                 }
             }
         }

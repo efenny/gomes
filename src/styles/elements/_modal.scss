@@ -10,9 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // visibility: hidden;
-    // pointer-events: none;
+    visibility: hidden;
+    pointer-events: none;
 
     .modal-inner {
         padding-top: $col-vw / 8;

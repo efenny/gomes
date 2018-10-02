@@ -16,7 +16,7 @@ const wordSpanWrapper = (str) => {
 	for (let char of str.split(' ')) {
 		strSpans.push(`<span data-word="${char}">${char}</span>`)
 	}
-	return strSpans.join(' ');
+	return strSpans.join(' '); 
 }
 
 // Get a string and wrap each word with span
@@ -38,7 +38,7 @@ function animateLetters() {
 }
 
 function homeMasonry() {
-	var elem = document.querySelector('.row-inner');
+	var elem = document.querySelector('.row-inner'); 
 	var msnry = new Masonry( elem, {
 	  // options
 	  itemSelector: '.case-study'
@@ -115,14 +115,14 @@ function beforeAfter() {
 const homeMasonry = () => {
 	jQuery('.design .row-inner').masonry({
 	  itemSelector: '.case-study',
-	  columnWidth: 1,
+	  columnWidth: 0,
 	});
 }
 
 const retouchedMasonry = () => {
 	jQuery('.retouching .row-inner').masonry({
 	  itemSelector: '.retouched',
-	  columnWidth: 1,
+	  columnWidth: 0.5,
 	});
 }
 
@@ -157,6 +157,5 @@ window.onload = function() {
 
 	if(document.getElementsByTagName('body')[0].className.match('home')) {
 		homeMasonry();
-	}
-	
+	}	
 }
