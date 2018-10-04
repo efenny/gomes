@@ -46,6 +46,7 @@
                     .text-wrapper {
                         padding: ($standard / 2) 0;
                         width: $col-vw * 3;
+                        margin-left: 0 !important;
 
                         @include breakpoint($tablet-break) {
                             padding-top: 0;

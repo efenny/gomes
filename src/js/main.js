@@ -10,6 +10,7 @@ const firstLoad = () => {
 	}
 }
 
+
 // Get a string and wrap each word with span
 const wordSpanWrapper = (str) => {
 	let strSpans = [];
@@ -28,27 +29,22 @@ const letterSpanWrapper = (str) => {
 	return strSpans.join('');
 }
 
-// get the elements that need to have their characters wrapped in span
-function animateLetters() {
-	let allSelected = document.getElementsByClassName('character-slide');
-	
-	for (let item of allSelected) {
-		item.innerHTML = wordSpanWrapper(item.dataset.characterSlide);
-	}
+const splashOpening = () => {
+	animateLetters('.character-slide');
 }
 
-function homeMasonry() {
-	var elem = document.querySelector('.row-inner'); 
-	var msnry = new Masonry( elem, {
-	  // options
-	  itemSelector: '.case-study'
-	});
+const aboutPage = () => {
+	animateLetters('.text-wrapper p');
+}
 
-	// element argument can be a selector string
-	//   for an individual element
-	var msnry = new Masonry( '.grid', {
-	  // options
-	});
+
+// get the elements that need to have their characters wrapped in span
+function animateLetters(element) {
+	let allSelected = document.querySelectorAll(element);
+	
+	for (let item of allSelected) {
+		item.innerHTML = wordSpanWrapper(item.innerHTML);
+	}
 }
 
 // before and after page
@@ -85,7 +81,6 @@ function beforeAfter() {
 
 
 			function moveComp(e) {
-				// e.preventDefault();
 				var horizontal = (e.clientX - x) / width * 100;
 			    item.children[item.children.length-1].style.setProperty('width', horizontal + '%');
 			}
@@ -98,7 +93,6 @@ function beforeAfter() {
 			item.addEventListener('touchstart', setComp);
 			item.addEventListener('mousemove', moveComp);
 			item.addEventListener('touchmove', moveComp);
-			// item.addEventListener('touchstart', moveComp(e));
 		}
 	}
 
@@ -112,6 +106,8 @@ function beforeAfter() {
 	movement(items);
 }
 
+
+// initiate the masonry for the home page
 const homeMasonry = () => {
 	jQuery('.design .row-inner').masonry({
 	  itemSelector: '.case-study',
@@ -119,6 +115,8 @@ const homeMasonry = () => {
 	});
 }
 
+
+// initiate the masonry for the retouching page
 const retouchedMasonry = () => {
 	jQuery('.retouching .row-inner').masonry({
 	  itemSelector: '.retouched',
@@ -126,10 +124,14 @@ const retouchedMasonry = () => {
 	});
 }
 
+
+// modal opening and closing actions
 const modalActions = (elementClassName) => {
 	console.log('open modal');
 }
 
+
+// retouched page - galleries functionality
 const retouchedGalleries = () => {
 	jQuery('.gallery').each(function(){
 		jQuery(this).slick();
@@ -137,14 +139,47 @@ const retouchedGalleries = () => {
 }
 
 
+const textFollow = () => {
+	var $window = jQuery(window);
+    function checkWidth() {
+        var windowsize = $window.width();
+        if (windowsize > 1024) {
+            let controller = new ScrollMagic.Controller();
+			let imageToFollow = document.querySelector('.row.website img');
+			let textHeight = document.querySelector('.row.website .text-wrapper').clientHeight;
+			let followDistance = imageToFollow.height;
+			let scene = new ScrollMagic.Scene({
+			  triggerElement: '.row.website .row-inner .text-wrapper', // starting scene, when reaching this element
+			  duration: followDistance - textHeight // pin the element for a total of 400px
+			})
+			.setPin('.row.website .row-inner .text-wrapper'); // the element we want to pin
+
+			// Add Scene to ScrollMagic Controller
+			controller.addScene(scene);
+        }
+    }
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    jQuery(window).resize(checkWidth);
+}
+
 // fire when the page is fully loaded
 window.onload = function() {
 	firstLoad();
-	animateLetters();
+	splashOpening();
+	
 
 	if(document.getElementsByTagName('body')[0].className.match('page-id-10')) {
 		beforeAfter();
 	}
+
+	if(document.getElementsByTagName('body')[0].className.match('postid-41')||
+		document.getElementsByTagName('body')[0].className.match('postid-73')) {
+		textFollow();
+	}
+
+	
 
 	if(document.getElementsByTagName('body')[0].className.match('page-id-8')) {
 		retouchedMasonry();
@@ -155,7 +190,7 @@ window.onload = function() {
 		homeMasonry();
 	}
 
-	if(document.getElementsByTagName('body')[0].className.match('home')) {
-		homeMasonry();
+	if(document.getElementsByTagName('body')[0].className.match('page-id-12')) {
+		aboutPage();
 	}	
 }
