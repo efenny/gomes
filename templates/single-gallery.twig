@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+{% import 'partial/ui.twig' as ui %}
+
+{% block content %}
+	<section class='row s-bottom {{ function('slug', page.title) }}'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		{% for image in page.get_field('images') %}
+					    <div id="{{ loop.index }}" class="img-wrapper {{ image.size }}">
+							<img data-retina="true" src="{{ TimberImage(image).src }}" alt="{{ TimberImage(image).alt }}">
+						</div>
+					{% endfor %}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row s-top-half s-bottom end'>
+ 	<div class='row-inner'>
+ 		<div class='col col-12'>
+ 		 	<div class='lb-inner'>
+ 		 		<a href="{{ site.url }}/retouching/" class="all">{{ ui.h2("> Back") }}</a>
+ 		 	</div>
+ 		</div>
+ 	</div>
+</section>
+{% endblock %}

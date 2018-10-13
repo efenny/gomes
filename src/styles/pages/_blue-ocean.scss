@@ -28,22 +28,22 @@
     }
 
     &.background {
-        height: $col-vw * 8;
+        height: $col-vw * 5;
         background-size: cover !important;
         background-position: center !important;
 
         @include breakpoint($laptop-break) {
-            height: $col-vw * 8.5;
+            height: $col-vw * 5.5;
         }
 
 
         @include breakpoint($tablet-break) {
-            height: $col-vw * 9.5;
+            height: $col-vw * 6.5;
         }
 
 
         @include breakpoint($mobile-break) {
-            height: $col-vw * 10.5;
+            height: $col-vw * 7.5;
         }
     }
 

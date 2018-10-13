@@ -3,7 +3,6 @@
 @import 'utility/typography';
 @import 'utility/mixins';
 @import 'vendors/aos';
-@import 'vendors/slick';
 @import 'pages/base';
 
 .home {
@@ -52,6 +51,10 @@
 
 .postid-73 {
     @import 'pages/franciscan-frairs';
+}
+
+.post-template-single-gallery {
+    @import 'pages/single-gallery';
 }
 
 @media print {

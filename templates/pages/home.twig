@@ -5,7 +5,7 @@
 	<section class='row design'>
 	 	<div class='row-inner'>
 	 		{% for item in cases %}
-	 			<article class="case-study {{ function('slug', item.title) }} ">
+	 			<article data-aos="fade-in" class="case-study {{ function('slug', item.title) }} ">
 	 				<a href="{{ item.link }}">
 	 					<div class="case-study-inner">
 		 					<div class="bg" style="background-image:url('{{ TimberImage(item.thumbnail).src }}');">

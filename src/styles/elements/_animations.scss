@@ -1,0 +1,21 @@
+// Animations Style Sheet
+//scroll animations
+[data-aos='fade-in'] {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition-property: transform, opacity;
+
+    &.aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// logo hover animation
+
+// mobile-menu animation
+body {
+    &.mobile-active {
+        overflow: hidden;
+    }
+}

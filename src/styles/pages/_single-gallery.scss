@@ -1,0 +1,54 @@
+// Single Gallery Style Sheet
+.row {
+    .img-wrapper {
+        margin-bottom: $col-vw / 2;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        @include breakpoint($mobile-break) {
+            margin-bottom: $col-vw;
+        }
+
+
+        &.portrait {
+            padding-left: $col-vw * 3;
+            padding-right: $col-vw * 3;
+
+            @include breakpoint($mobile-break) {
+                padding-left: $col-vw * 2.5;
+                padding-right: $col-vw * 2.5;
+            }
+        }
+
+        &.landscape {
+            padding-left: $col-vw * 1;
+            padding-right: $col-vw * 1;
+
+            @include breakpoint($mobile-break) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        &.square {
+            padding-left: $col-vw * 2;
+            padding-right: $col-vw * 2;
+
+            @include breakpoint($mobile-break) {
+                padding-left: $col-vw;
+                padding-right: $col-vw;
+            }
+        }
+    }
+
+    &.volteo {
+        .img-wrapper {
+            @include breakpoint($tablet-break) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

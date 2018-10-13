@@ -9,6 +9,9 @@
 		{% include 'partial/splash-screen.twig' %}
 		<main id="main">
 			{% include 'partial/header.twig' %}
+			<div class="mobile-menu">
+				{% include "menu.twig" with {'menu': menu.get_items} %}
+			</div>
 			<div class="content">
 				{% block content %}
 					Sorry, no content

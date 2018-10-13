@@ -6,36 +6,13 @@
 	 	<div class='row-inner'>
 	 		{% for item in page.get_field('images') %}
 	 			<article class="retouched width-{{ item.width }}" data-retina="true" data-slide-Number="{{ item.number_in_gallery }}">
-	 				{{ ui.img(item.normal_display) }}
+	 				<a href="{{site.url}}/{{ item.gallery_associated_with }}/#{{ item.number_in_gallery }}">
+	 					{{ ui.img(item.normal_display) }}
+	 				</a>
 	 			</article>
 	 		{% else %}
 	 			<h3>There are no images at the moment.</h3>
 	 		{% endfor %}
 	 	</div>
 	</section>
-
-	<div class="modal">
-		<div class="modal-inner">
-			<div class="galleries">
-				{% for item in page.get_field('gallaries') %}
-		 			<div class="gallery" data-gallery-title="{{ function("slug", item.title) }}">
-		 				{% for image in item.normal_gallery %}
-						    <div class="img-wrapper" >
-								<img data-retina="true" src="{{ TimberImage(image).src }}" alt="{{ TimberImage(image).alt }}">
-							</div>
-						{% endfor %}
-		 			</div>
-		 		{% else %}
-		 			<h3>There are no galleries at the moment.</h3>
-		 		{% endfor %}
-			</div>
-		</div>
-		<div class="close">
-				<div class="bar-wrapper">
-					<div class="bar"></div>
-					<div class="bar"></div>
-				</div>
-				<span>close</span>
-			</div>
-	</div>
 {% endblock %}

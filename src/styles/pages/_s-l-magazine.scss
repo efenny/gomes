@@ -109,8 +109,10 @@
             .second {
                 width: $col-vw * 5.5;
                 margin-left: $col-vw;
-                margin-top: $col-vw / 2;
+                margin-bottom: $col-vw / 2;
                 overflow: hidden;
+                display: flex;
+                align-items: flex-end;
 
                 img {
                     @include breakpoint($tablet-break) {

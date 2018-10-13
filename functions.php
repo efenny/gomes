@@ -115,7 +115,7 @@ if( function_exists('acf_add_options_page') ) {
 
 function wpdocs_theme_name_scripts() {
 	wp_enqueue_script( 'ScrollMagic', get_template_directory_uri() . '/dist/js/ScrollMagic.min.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/js/slick.min.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'AOS', get_template_directory_uri() . '/dist/js/aos.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'main', get_template_directory_uri() . '/dist/js/main.min.js', array( 'jquery' ), '1.0.0', true );
     wp_enqueue_script( 'masonry', get_template_directory_uri() . '/dist/js/masonry.min.js', array('jquery'), '1.0.0', true );
     
