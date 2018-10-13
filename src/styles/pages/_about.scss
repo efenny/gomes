@@ -26,6 +26,37 @@
 
                 .text-wrapper {
                     padding-bottom: 3rem;
+
+                    p {
+                        // &:first-child {
+                        //     span {
+                        //         display: inline-block;
+                        //         animation: slideUp $transition-slow forwards;
+                        //         opacity: 0;
+
+                        //         @for $i from 1 through 60 {
+                        //             &:nth-child(#{$i}) {
+                        //                 animation-delay: #{$i / 30}s;
+                        //             }
+                        //         }
+                        //     }
+                        // }
+
+                        // &:last-child {
+                        //     span {
+                        //         display: inline-block;
+                        //         animation: slideUp $transition-slow forwards;
+                        //         opacity: 0;
+
+                        //         @for $i from 1 through 60 {
+                        //             &:nth-child(#{$i}) {
+                        //                 animation-delay: #{$i / 30 + 4}s;
+                        //             }
+                        //         }
+                        //     }
+                        // }
+                   
+                    }
                 }
 
                 .social-wrapper {
@@ -38,6 +69,11 @@
 
                         .img-wrapper {
                             width: 40px;
+
+                            // opacity: 0;
+                            // animation: slideUp $transition-slow forwards;
+                            // animation-delay: 4.85s;
+                       
                         }
                     }
                 }

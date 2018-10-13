@@ -47,6 +47,7 @@ function animateLetters(element) {
 	}
 }
 
+
 // before and after page
 function beforeAfter() {
 	let items = document.getElementsByClassName('item-wrapper');
@@ -164,37 +165,104 @@ const textFollow = () => {
     jQuery(window).resize(checkWidth);
 }
 
+const highRez = () => {
+	if (window.devicePixelRatio > 1) {
+		let arr = document.querySelectorAll('[data-retina]');
+
+		for(let item of arr) {
+			let itemSrc = jQuery(item).find('img').attr('src');
+
+			let finalSource = itemSrc.slice(0, itemSrc.length-4) + '_retina_5k' + itemSrc.slice(itemSrc.length-4);
+
+			jQuery(item).find('img').attr('src', finalSource);
+		}
+	}
+}
+
+const pageTransitions = () => {
+	'use strict';
+	  var options = {
+	    prefetch: true,
+	    cacheLength: 2,
+	    scroll: true,
+	    onStart: {
+	      duration: 500, // Duration of our animation
+	      render: function ($container) {
+	        // Add your CSS animation reversing class
+	        jQuery('body').addClass('is-exiting');
+
+	        // Restart your animation
+	        smoothState.restartCSSAnimations();
+	      }
+	    },
+	    onProgress: {
+		    // How long this animation takes
+		    duration: 500,
+		    // A function that dictates the animations that take place
+		    render: function ($container) {
+		    	jQuery('body').addClass('on-progress');
+		    }
+		  },
+	    onReady: {
+	      duration: 500,
+	      render: function ($container, $newContent) {
+	        // Remove your CSS animation reversing class
+	        jQuery('body').removeClass('on-progress');
+
+	        // Inject the new content
+	        $container.html($newContent);
+
+	      }
+	    },
+	    onAfter: function($container, $newContent) {
+	    	jQuery('body').removeClass('is-exiting');
+
+	    	AOS.init({
+				duration: 700,
+				anchorPlacement: 'center-top' 
+			});
+	    },
+	  },
+	  smoothState = jQuery('#main').smoothState(options).data('smoothState');
+}
+
 // fire when the page is fully loaded
-document.addEventListener("DOMContentLoaded", function(event) {
-	firstLoad();
-	splashOpening();
-	mobileMenuFunctionality();
-	
+window.onload = function() {
+	jQuery.fn.ready(function(){
+		pageTransitions();
+		firstLoad();
+		splashOpening();
+		mobileMenuFunctionality();
+		
+		
 
-	if(document.getElementsByTagName('body')[0].className.match('page-id-10')) {
-		beforeAfter();
-	}
+		if(document.getElementsByTagName('body')[0].className.match('page-id-10')) {
+			beforeAfter();
+		}
 
-	if(document.getElementsByTagName('body')[0].className.match('postid-41')||
-		document.getElementsByTagName('body')[0].className.match('postid-73')) {
-		textFollow();
-	}
+		if(document.getElementsByTagName('body')[0].className.match('postid-41')||
+			document.getElementsByTagName('body')[0].className.match('postid-73')) {
+			textFollow();
+		}
 
-	
-	if(document.getElementsByTagName('body')[0].className.match('page-id-8')) {
-		retouchedMasonry();
-	}
+		
+		if(document.getElementsByTagName('body')[0].className.match('page-id-8')) {
+			retouchedMasonry();
+		}
 
-	if(document.getElementsByTagName('body')[0].className.match('home')) {
-		homeMasonry();
-	}
+		if(document.getElementsByTagName('body')[0].className.match('home')) {
+			homeMasonry();
+		}
 
-	if(document.getElementsByTagName('body')[0].className.match('page-id-12')) {
-		aboutPage();
-	}
+		if(document.getElementsByTagName('body')[0].className.match('page-id-12')) {
+			aboutPage();
+		}
 
-	AOS.init({
-		duration: 700,
-		anchorPlacement: 'center-top' 
+		AOS.init({
+			duration: 700,
+			anchorPlacement: 'center-top' 
+		});
+
+		highRez();
 	});
-});
+}

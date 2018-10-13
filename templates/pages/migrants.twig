@@ -21,7 +21,9 @@
 
 	 		<div class='col image col-6'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.website_page, "box-shadow") }}
+	 		 		<div data-retina class="img-wrapper box-shadow" >
+						<img src="{{ TimberImage(page.website_page).src }}" alt="{{ TimberImage(page.website_page).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

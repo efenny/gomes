@@ -18,12 +18,22 @@
                 }
 
 
+                h1 {
+                    // animation: slideUp $transition-slow forwards;
+                    // opacity: 0;
+               
+                }
+
                 a {
                     h2 {
                         position: relative;
                         display: inline-block;
                         width: auto;
                         overflow: hidden;
+
+                        // animation: slideUp $transition-slow forwards;
+                        // animation-delay: 0.25s;
+                        // opacity: 0;
 
                         &::before {
                             content: '';

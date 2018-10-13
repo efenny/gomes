@@ -5,20 +5,27 @@
 	{% endblock %}
 	</head>
 {% endblock %}
+
 	<body class="{{body_class}}" data-template="base.twig">
 		{% include 'partial/splash-screen.twig' %}
-		<main id="main">
+		<div class="page-transition">
+			<div class="img-wrapper">
+				<img src="{{ site.theme.link }}/screenshot.jpg" alt="Page transition">
+			</div>
+		</div>
+		<main id="main" >
 			{% include 'partial/header.twig' %}
 			<div class="mobile-menu">
 				{% include "menu.twig" with {'menu': menu.get_items} %}
 			</div>
-			<div class="content">
+			<div class="content {{body_class}}">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
 			</div>
 			{% include 'footer.twig' %}
+			{{ function('wp_footer') }}
 		</main>
-		{{ function('wp_footer') }}
+		
 	</body>
 </html>

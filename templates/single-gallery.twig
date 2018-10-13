@@ -7,8 +7,8 @@
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
 	 		 		{% for image in page.get_field('images') %}
-					    <div id="{{ loop.index }}" class="img-wrapper {{ image.size }}">
-							<img data-retina="true" src="{{ TimberImage(image).src }}" alt="{{ TimberImage(image).alt }}">
+					    <div data-retina="true" id="{{ loop.index }}" class="img-wrapper {{ image.size }}">
+							<img src="{{ TimberImage(image).src }}" alt="{{ TimberImage(image).alt }}">
 						</div>
 					{% endfor %}
 	 		 	</div>

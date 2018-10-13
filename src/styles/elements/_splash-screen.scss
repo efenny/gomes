@@ -12,8 +12,6 @@ body {
             background: $white;
             z-index: 99;
 
-            // display: flex;
-
             @at-root {
                 @keyframes splashFade {
                     0% {
