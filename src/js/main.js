@@ -126,10 +126,6 @@ const retouchedMasonry = () => {
 }
 
 const mobileMenuFunctionality = () => {
-	const activation = (element) => {
-		
-	}
-
 	let mobileBtn = document.getElementsByClassName('mobile-button')[0];
 	let mobileMenu = document.getElementsByClassName('mobile-menu')[0];
 
@@ -137,6 +133,10 @@ const mobileMenuFunctionality = () => {
 		document.getElementsByTagName('body')[0].classList.toggle('mobile-active');
 		mobileBtn.classList.toggle('active');
 		mobileMenu.classList.toggle('active');
+	});
+
+	jQuery('.mobile-menu li a').click(function(){
+		jQuery('body').removeClass('mobile-active');
 	});
 }
 
@@ -186,19 +186,14 @@ const pageTransitions = () => {
 	    cacheLength: 2,
 	    scroll: true,
 	    onStart: {
-	      duration: 500, // Duration of our animation
+	      duration: 500,
 	      render: function ($container) {
-	        // Add your CSS animation reversing class
 	        jQuery('body').addClass('is-exiting');
-
-	        // Restart your animation
 	        smoothState.restartCSSAnimations();
 	      }
 	    },
 	    onProgress: {
-		    // How long this animation takes
 		    duration: 500,
-		    // A function that dictates the animations that take place
 		    render: function ($container) {
 		    	jQuery('body').addClass('on-progress');
 		    }
@@ -211,58 +206,56 @@ const pageTransitions = () => {
 
 	        // Inject the new content
 	        $container.html($newContent);
-
 	      }
 	    },
 	    onAfter: function($container, $newContent) {
-	    	jQuery('body').removeClass('is-exiting');
+	    	Ready();
 
-	    	AOS.init({
-				duration: 700,
-				anchorPlacement: 'center-top' 
-			});
+			jQuery('body').removeClass('is-exiting');
 	    },
 	  },
 	  smoothState = jQuery('#main').smoothState(options).data('smoothState');
 }
 
+function Ready() {
+	pageTransitions();
+	firstLoad();
+	splashOpening();
+	mobileMenuFunctionality();
+	
+	
+
+	if(document.getElementsByClassName('content')[0].className.match('page-id-10')) {
+		beforeAfter();
+	}
+
+	if(document.getElementsByClassName('content')[0].className.match('postid-41')||
+		document.getElementsByClassName('content')[0].className.match('postid-73')) {
+		textFollow();
+	}
+
+	
+	if(document.getElementsByClassName('content')[0].className.match('page-id-8')) {
+		retouchedMasonry();
+	}
+
+	if(document.getElementsByClassName('content')[0].className.match('home')) {
+		homeMasonry();
+	}
+
+	if(document.getElementsByClassName('content')[0].className.match('page-id-12')) {
+		aboutPage();
+	}
+
+	AOS.init({
+		duration: 700,
+		anchorPlacement: 'center-top' 
+	});
+
+	highRez();
+}
+
 // fire when the page is fully loaded
 window.onload = function() {
-	jQuery.fn.ready(function(){
-		pageTransitions();
-		firstLoad();
-		splashOpening();
-		mobileMenuFunctionality();
-		
-		
-
-		if(document.getElementsByTagName('body')[0].className.match('page-id-10')) {
-			beforeAfter();
-		}
-
-		if(document.getElementsByTagName('body')[0].className.match('postid-41')||
-			document.getElementsByTagName('body')[0].className.match('postid-73')) {
-			textFollow();
-		}
-
-		
-		if(document.getElementsByTagName('body')[0].className.match('page-id-8')) {
-			retouchedMasonry();
-		}
-
-		if(document.getElementsByTagName('body')[0].className.match('home')) {
-			homeMasonry();
-		}
-
-		if(document.getElementsByTagName('body')[0].className.match('page-id-12')) {
-			aboutPage();
-		}
-
-		AOS.init({
-			duration: 700,
-			anchorPlacement: 'center-top' 
-		});
-
-		highRez();
-	});
+	Ready();
 }

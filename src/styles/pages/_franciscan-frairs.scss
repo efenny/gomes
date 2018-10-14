@@ -145,10 +145,31 @@
             &:last-child {
                 padding-bottom: 0;
             }
+
+            @include breakpoint($tablet-break) {
+                padding: 0 ($col-vw * 1.5);
+                padding-bottom: $col-vw;
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
         }
     }
 
     &.color {
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: $col-vw !important;
+            padding-right: $col-vw !important;
+        }
+
+
         .col-inner {
             display: flex;
             justify-content: center;
@@ -196,24 +217,25 @@
 
                     &:nth-child(1),
                     &:nth-child(2) {
-                        margin-bottom: $col-vw / 2;
+                        margin-bottom: $col-vw / 4;
+
+                        @include breakpoint($mobile-break) {
+                            margin-bottom: $col-vw / 2;
+                        }
                     }
 
                     @include breakpoint($tablet-break) {
-                        width: $col-vw * 2;
                         height: $col-vw * 3;
                     }
 
 
                     @include breakpoint($mobile-break) {
                         height: $col-vw * 3.5;
-                        width: $col-vw * 3;
                     }
 
 
                     @include breakpoint($mobile-break-sml) {
                         height: $col-vw * 4.25;
-                        width: $col-vw * 3;
                     }
 
 
@@ -231,6 +253,11 @@
 
                         @include breakpoint($mobile-break) {
                             padding: 0.5rem;
+                        }
+
+
+                        @include breakpoint($mobile-break-sml) {
+                            padding: 0.25rem;
                         }
 
 

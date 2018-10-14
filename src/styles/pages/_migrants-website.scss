@@ -160,6 +160,18 @@
     }
 
     &.color {
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: $col-vw !important;
+            padding-right: $col-vw !important;
+        }
+
+
         .col-inner {
             display: flex;
             justify-content: center;

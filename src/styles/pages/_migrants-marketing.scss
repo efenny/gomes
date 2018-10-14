@@ -19,6 +19,11 @@
         padding-left: ($col-vw * 2) !important;
         padding-right: ($col-vw * 2) !important;
         padding-bottom: $col-vw;
+
+        @include breakpoint($mobile-break) {
+            padding-left: $col-vw !important;
+            padding-right: $col-vw !important;
+        }
     }
 
     &.cards {

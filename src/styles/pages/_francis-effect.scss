@@ -43,16 +43,37 @@
     &.images-1 {
         padding-bottom: $col-vw / 2;
 
+        @include breakpoint($mobile-break) {
+            padding-bottom: 0;
+        }
+
+
         .col-inner {
             display: flex;
-            flex-wrap: warp;
+            flex-wrap: wrap;
 
             .first {
                 width: $col-vw * 5.5;
                 margin-left: $col-vw * 1.5;
+                display: flex;
+                align-items: flex-end;
 
                 @include breakpoint($tablet-break) {
                     margin-left: $col-vw;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    margin: 0;
+                    bottom: 0;
+                    padding-bottom: $col-vw;
+
+                    img {
+                        width: $col-vw * 10;
+                        margin: 0 auto;
+                        display: block;
+                    }
                 }
             }
 
@@ -63,7 +84,21 @@
                 bottom: -$col-vw * 1.5;
 
                 @include breakpoint($tablet-break) {
-                    width: $col-vw * 3.15;
+                    width: $col-vw * 3.25;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    margin: 0;
+                    bottom: 0;
+                    padding-bottom: $col-vw;
+
+                    img {
+                        width: $col-vw * 6;
+                        margin: 0 auto;
+                        display: block;
+                    }
                 }
             }
         }
@@ -74,11 +109,30 @@
 
         .col-inner {
             display: flex;
-            flex-wrap: warp;
+            flex-wrap: wrap;
 
             .third {
                 width: $col-vw * 4;
                 margin-left: $col-vw * 2;
+
+                @include breakpoint($tablet-break) {
+                    margin-left: $col-vw * 1.5;
+                    width: $col-vw * 4.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    margin: 0;
+                    bottom: 0;
+                    padding-bottom: $col-vw;
+
+                    img {
+                        width: $col-vw * 8;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
             }
 
             .fourth {
@@ -86,6 +140,24 @@
                 margin-left: $col-vw / 2;
                 position: relative;
                 bottom: -$col-vw * 1.5;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 5.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    margin: 0;
+                    bottom: 0;
+                    padding-bottom: $col-vw;
+
+                    img {
+                        width: $col-vw * 10;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -95,13 +167,33 @@
 
         .col-inner {
             display: flex;
-            flex-wrap: warp;
+            flex-wrap: wrap;
 
             .fifth {
                 width: $col-vw * 5.5;
                 margin-left: $col-vw / 2;
                 position: relative;
                 top: -$col-vw / 3;
+
+                @include breakpoint($tablet-break) {
+                    margin-left: 0;
+                    width: $col-vw * 6;
+                    top: -$col-vw / 2;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    margin: 0;
+                    bottom: 0;
+                    padding-bottom: $col-vw;
+
+                    img {
+                        width: $col-vw * 10;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
             }
 
             .sixth {
@@ -109,6 +201,23 @@
                 margin-left: $col-vw / 2;
                 position: relative;
                 bottom: -$col-vw * 1.5;
+
+                @include breakpoint($tablet-break) {
+                    width: $col-vw * 3.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    width: 100%;
+                    margin: 0;
+                    bottom: 0;
+
+                    img {
+                        width: $col-vw * 7;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -122,13 +231,21 @@
         }
 
         .text-wrapper {
+            margin-left: $col-vw;
+
             @include text-width;
+
+            @include breakpoint($tablet-break) {
+                margin-left: 0;
+                align-items: flex-end;
+            }
         }
     }
 
     &.packaging {
         padding-right: ($col-vw * 1.333) !important;
         padding-left: ($col-vw * 1.333) !important;
+        overflow: hidden;
 
         @include breakpoint($tablet-break) {
             padding-right: 0 !important;
