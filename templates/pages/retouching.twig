@@ -5,7 +5,7 @@
 	<section class='row retouching'>
 	 	<div class='row-inner'>
 	 		{% for item in page.get_field('images') %}
-	 			<article class="retouched width-{{ item.width }}" data-slide-Number="{{ item.number_in_gallery }}">
+	 			<article data-aos="fade-up" class="retouched width-{{ item.width }}" data-slide-Number="{{ item.number_in_gallery }}">
 	 				<a href="{{site.url}}/{{ item.gallery_associated_with }}/#{{ item.number_in_gallery }}">
 	 					{{ ui.img(item.normal_display) }}
 	 				</a>
@@ -18,7 +18,7 @@
 	<section class='row credits '>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		<p>Images are from multiple photographers and projects.</p>
 	 		 	</div>
 	 		</div>

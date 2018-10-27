@@ -65,13 +65,13 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_5, "fifth") }}
-	 		 		{{ ui.img(page.image_6, "sixth") }}
-	 		 		<div class="img-wrapper first" data-aos="fade-in">
-						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
+	 		 		{# {{ ui.img(page.image_5, "fifth") }}
+	 		 		{{ ui.img(page.image_6, "sixth") }} #}
+	 		 		<div class="img-wrapper fifth" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_5).src }}" alt="{{ TimberImage(page.image_5).alt }}">
 					</div>
-					<div class="img-wrapper second" data-aos="fade-in">
-						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
+					<div class="img-wrapper sixth" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_6).src }}" alt="{{ TimberImage(page.image_6).alt }}">
 					</div>
 	 		 	</div>
 	 		</div>
@@ -81,7 +81,7 @@
 	<section class='row s-top blu-ray s-bottom'>
 	 	<div class='row-inner'>
 	 		<div class='col'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.blu_ray) }}
 	 		 	</div>
 	 		</div>
@@ -92,7 +92,10 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.packaging) }}
+	 		 		{# {{ ui.img(page.packaging) }} #}
+	 		 		<div class="img-wrapper" data-aos="fade-in">
+						<img src="{{ TimberImage(page.packaging).src }}" alt="{{ TimberImage(page.packaging).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -101,7 +104,7 @@
 	<section class='row s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.box_set) }}
 	 		 	</div>
 	 		</div>
@@ -112,7 +115,10 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.print) }}
+	 		 		{# {{ ui.img(page.print) }} #}
+	 		 		<div class="img-wrapper" data-aos="fade-in">
+						<img src="{{ TimberImage(page.print).src }}" alt="{{ TimberImage(page.print).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

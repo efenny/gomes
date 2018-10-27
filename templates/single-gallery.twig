@@ -7,7 +7,7 @@
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
 	 		 		{% for image in page.get_field('images') %}
-					    <div data-retina="true" id="{{ loop.index }}" class="img-wrapper {{ image.size }}">
+					    <div data-retina="true" data-aos="fade-up" id="{{ loop.index }}" class="img-wrapper {{ image.size }}">
 							<img src="{{ TimberImage(image).src }}" alt="{{ TimberImage(image).alt }}">
 						</div>
 					{% endfor %}
@@ -19,7 +19,7 @@
 	<section class='row s-top-half s-bottom end'>
  	<div class='row-inner'>
  		<div class='col col-12'>
- 		 	<div class='lb-inner'>
+ 		 	<div class='lb-inner' data-aos="fade-up">
  		 		<a href="{{ site.url }}/retouching/" class="all">{{ ui.h2("> Back") }}</a>
  		 	</div>
  		</div>

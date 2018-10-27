@@ -4,7 +4,7 @@
 	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner'  data-aos="fade-up">
 	 		 		{{ ui.p(page.intro_text) }}
 	 		 	</div>
 	 		</div>
@@ -20,7 +20,7 @@
 	 		</div>
 
 	 		<div class='col image col-6'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner'  data-aos="fade-up">
 	 		 		{{ ui.img(page.website_page, "box-shadow") }}
 	 		 	</div>
 	 		</div>
@@ -33,7 +33,7 @@
 	 		 	<div class='col-inner'>
 	 		 		<div class="image-wrapper">
 	 		 			{% for item in page.get_field('mobile_shots') %}
-	 		 				<div class="image-item">
+	 		 				<div data-aos="fade-in" class="image-item">
 	 		 					{{ ui.img(item.image, "box-shadow") }}
 	 		 				</div>
 	 		 			{% endfor %}
@@ -46,7 +46,7 @@
 	<section class='row center responsive s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.responsive) }}
 	 		 	</div>
 	 		</div>
@@ -59,7 +59,10 @@
 	 		 	<div class='col-inner'>
 	 		 		<div class="image-wrapper">
 	 		 			{% for item in page.get_field('tablet_images') %}
-	 		 				{{ ui.img(item.image, "box-shadow") }}
+	 		 				{# {{ ui.img(item.image, "box-shadow") }} #}
+	 		 				<div class="img-wrapper box-shadow" data-aos="fade-in">
+								<img src="{{ TimberImage(item.image).src }}" alt="{{ TimberImage(item.image).alt }}">
+							</div>
 	 		 			{% endfor %}
 	 		 		</div>
 	 		 	</div>
