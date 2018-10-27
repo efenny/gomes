@@ -290,7 +290,7 @@ window.onload = function() {
 	Ready();
 
 	AOS.init({
-		duration: 700,
+		duration: 600,
 		anchorPlacement: 'center-top' 
 	});
 	

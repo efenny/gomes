@@ -15,12 +15,15 @@
 	 	<div class='row-inner'>
 	 		<div class='col info fixed-scroll col-6'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.p(page.description) }}
+	 		 		{# {{ ui.p(page.description) }} #}
+	 		 		<div class="text-wrapper" data-aos="fade-in">
+	 		 			<p>{{ page.description }}</p>
+	 		 		</div>
 	 		 	</div>
 	 		</div>
 
 	 		<div class='col image col-6'>
-	 		 	<div class='col-inner'  data-aos="fade-up">
+	 		 	<div class='col-inner'  data-aos="fade-in">
 	 		 		{{ ui.img(page.website_page, "box-shadow") }}
 	 		 	</div>
 	 		</div>

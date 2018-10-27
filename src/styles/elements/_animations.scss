@@ -24,6 +24,16 @@
     }
 }
 
+[data-aos='fade'] {
+    opacity: 0;
+    transition-property: opacity;
+    will-change: opacity;
+
+    &.aos-animate {
+        opacity: 1;
+    }
+}
+
 // logo hover animation
 
 // mobile-menu animation
