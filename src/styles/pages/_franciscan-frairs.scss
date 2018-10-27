@@ -37,14 +37,18 @@
         .col {
             &.info {
                 .col-inner {
+                    padding-top: $standard / 2;
+
                     @include breakpoint($tablet-break) {
                         display: flex;
                         justify-content: center;
+                        padding-top: 0;
                     }
 
 
                     .text-wrapper {
-                        padding: ($standard / 2) 0;
+                        padding: 0;
+                        padding-bottom: $standard / 2;
                         width: $col-vw * 3;
                         margin-left: 0 !important;
 
@@ -154,6 +158,16 @@
                     padding-bottom: 0;
                 }
             }
+
+
+            @include breakpoint($mobile-break) {
+                padding: 0 $col-vw;
+                padding-bottom: $col-vw;
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
         }
     }
 
@@ -241,7 +255,7 @@
 
                     &:hover {
                         .text-wrapper {
-                            opacity: 0;
+                            opacity: 1;
                         }
                     }
 

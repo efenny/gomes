@@ -3,7 +3,7 @@
 {% block post %}
 	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
-	 		<div class='col text'>
+	 		<div class='col text' data-aos="fade-up">
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.p(page.journey) }}
 	 		 	</div>
@@ -14,7 +14,7 @@
 	<section class='row collage'>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.img(page.collage) }}
 	 		 	</div>
 	 		</div>
@@ -25,8 +25,12 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.card) }}
-	 		 		{{ ui.img(page.pamphlet) }}
+	 		 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.card).src }}" alt="{{ TimberImage(page.card).alt }}">
+					</div>
+					<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.pamphlet).src }}" alt="{{ TimberImage(page.pamphlet).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -35,7 +39,7 @@
 	<section class='row booklet-info s-top center s-bottom'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-in">
 	 		 		{{ ui.p(page.booklet_info) }}
 	 		 	</div>
 	 		</div>
@@ -46,9 +50,12 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_1) }}
-	 		 		{{ ui.img(page.image_2) }}
-	 		 		
+	 		 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
+					</div>
+					<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -58,7 +65,9 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_3) }}
+	 		 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.image_3).src }}" alt="{{ TimberImage(page.image_3).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -68,7 +77,9 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_4) }}
+	 		 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.image_4).src }}" alt="{{ TimberImage(page.image_4).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -78,8 +89,10 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.h2("Grid design") }}
-	 		 		{{ ui.img(page.grid_design) }}
+	 		 		<h2 data-aos="fade-up">Grid design</h2>
+	 		 		<div class="img-wrapper" data-aos="fade-in">
+						<img src="{{ TimberImage(page.grid_design).src }}" alt="{{ TimberImage(page.grid_design).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

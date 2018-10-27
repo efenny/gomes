@@ -12,12 +12,19 @@ MEDIA QUERY (MQ)
     transition: $transition;
 
     &:hover {
-        box-shadow: 0 6px 21px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.16);
     }
+
+    // box-shadow: none !important;
 }
 
 @mixin text-width {
     width: ($col-vw * 3) !important;
+
+    @include breakpoint($desktop-break-med) {
+        width: ($col-vw * 3.5) !important;
+    }
+
 
     @include breakpoint($desktop-break-sml) {
         width: ($col-vw * 3.75) !important;

@@ -21,15 +21,16 @@ $standard: 200px;
 $p-space: 3rem;
 
 //transitions
-$transition: 0.5s ease;
-$transition-slow: 0.7s ease;
-$transition-slower: 1.25s ease;
+$transition: 0.3s ease-in-out;
+$transition-slow: 0.6s ease-in-out;
+$transition-slower: 0.9s ease-in-out;
 
 // border thickness
 $border-width: 2px;
 
 // common device break points
 $desktop-break: 1920px;
+$desktop-break-med: 1710px;
 $desktop-break-sml: 1550px;
 $laptop-break: 1440px;
 $laptop-break-sml: 1250px;

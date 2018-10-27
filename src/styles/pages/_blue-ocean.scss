@@ -2,12 +2,7 @@
 .row {
     &.page-title {
         .col {
-            padding-bottom: $col-vw * 1.5;
-
-            @include breakpoint($tablet-break) {
-                padding-bottom: 0;
-            }
-
+            padding-bottom: 0;
 
             h1 {
                 max-width: 100%;
@@ -48,55 +43,95 @@
     }
 
     &.logo-development {
+        padding: 0 !important;
+
         .col-inner {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
 
             .img-wrapper {
-                width: $col-vw * 3;
-                margin-bottom: $col-vw / 2;
+                width: $col * 3;
+                margin-bottom: $col / 2;
 
                 @include breakpoint($tablet-break) {
-                    width: $col-vw * 4.75;
+                    width: $col * 4.75;
                 }
 
 
                 @include breakpoint($mobile-break) {
-                    width: $col-vw * 8;
-                    margin: 0 $col-vw;
-                    margin-bottom: $col-vw;
+                    width: $col * 8;
+                    margin: 0 $col;
+                    margin-bottom: $col;
                 }
 
 
-                &:nth-child(4) {
-                    margin-bottom: 0;
-                    margin-left: $col-vw * 1.75;
+                &:nth-child(1) {
+                    margin-left: $col;
 
+                    @include breakpoint($mobile-break) {
+                        margin: 0 ($col * 2);
+                        margin-bottom: $col;
+                    }
+                }
+
+                &:nth-child(2) {
                     @include breakpoint($tablet-break) {
-                        margin: 0;
-                        margin-bottom: $col-vw / 2;
+                        margin-right: $col;
                     }
 
 
                     @include breakpoint($mobile-break) {
-                        margin: 0 $col-vw;
-                        margin-bottom: $col-vw;
+                        margin: 0 ($col * 2);
+                        margin-bottom: $col;
+                    }
+                }
+
+                &:nth-child(3) {
+                    margin-right: $col;
+
+                    @include breakpoint($tablet-break) {
+                        margin-left: $col;
+                        margin-right: 0;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        margin: 0 ($col * 2);
+                        margin-bottom: $col;
+                    }
+                }
+
+                &:nth-child(4) {
+                    margin-bottom: 0;
+                    margin-left: $col * 2.75;
+
+                    @include breakpoint($tablet-break) {
+                        margin-right: $col;
+                        margin-left: 0;
+                        margin-bottom: $col / 2;
+                    }
+
+
+                    @include breakpoint($mobile-break) {
+                        margin: 0 ($col * 2);
+                        margin-bottom: $col;
                     }
                 }
 
                 &:nth-child(5) {
                     margin-bottom: 0;
-                    margin-right: $col-vw * 1.75;
+                    margin-right: $col * 2.75;
+                    margin-left: 0;
 
                     @include breakpoint($tablet-break) {
                         margin: 0;
-                        margin-left: $col-vw * 2.75;
+                        margin-left: $col * 3 + $col / 3 * 2;
                     }
 
 
                     @include breakpoint($mobile-break) {
-                        margin: 0 $col-vw;
+                        margin: 0 ($col * 2);
                     }
                 }
             }
@@ -106,7 +141,12 @@
     &.images-1 {
         .col-inner {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+
+            @include breakpoint($mobile-break) {
+                flex-wrap: wrap;
+            }
+
 
             .first {
                 width: $col-vw * 5.5;
@@ -194,7 +234,7 @@
 
 
                 h3 {
-                    color: #0083CF;
+                    color: #00A0DF;
                 }
             }
 

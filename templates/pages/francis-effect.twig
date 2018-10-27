@@ -4,7 +4,7 @@
 	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.brothers) }}
 	 		 	</div>
 	 		</div>
@@ -20,7 +20,7 @@
 	<section class='row s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.poster_info) }}
 	 		 	</div>
 	 		</div>
@@ -31,8 +31,14 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_1, "first") }}
-	 		 		{{ ui.img(page.image_2, "second") }}
+	 		 		{# {{ ui.img(page.image_1, "first") }}
+	 		 		{{ ui.img(page.image_2, "second") }} #}
+	 		 		<div class="img-wrapper first" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
+					</div>
+					<div class="img-wrapper second" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -42,8 +48,14 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_3, "third") }}
-	 		 		{{ ui.img(page.image_4, "fourth") }}
+	 		 		{# {{ ui.img(page.image_3, "third") }}
+	 		 		{{ ui.img(page.image_4, "fourth") }} #}
+	 		 		<div class="img-wrapper third" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_3).src }}" alt="{{ TimberImage(page.image_3).alt }}">
+					</div>
+					<div class="img-wrapper fourth" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_4).src }}" alt="{{ TimberImage(page.image_4).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -55,6 +67,12 @@
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.img(page.image_5, "fifth") }}
 	 		 		{{ ui.img(page.image_6, "sixth") }}
+	 		 		<div class="img-wrapper first" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
+					</div>
+					<div class="img-wrapper second" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

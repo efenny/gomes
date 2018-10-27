@@ -4,12 +4,12 @@
 	<section class='row intro align-center s-top s-bottom'>
 	 	<div class='row-inner'>
 	 		<div class='col img col-6'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.img(page.cover) }}
 	 		 	</div>
 	 		</div>
 	 		<div class='col info col-6'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.editorial) }}
 	 		 	</div>
 	 		</div>
@@ -26,7 +26,7 @@
 	<section class='row inside-page'>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.img(page.page) }}
 	 		 	</div>
 	 		</div>
@@ -36,7 +36,7 @@
 	<section class='row center responsive s-bottom s-top no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.grid) }}
 	 		 	</div>
 	 		</div>
@@ -47,8 +47,14 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_1, "first") }}
-	 		 		{{ ui.img(page.image_2, "second") }}
+	 		 		{# {{ ui.img(page.image_1, "first") }}
+	 		 		{{ ui.img(page.image_2, "second") }} #}
+	 		 		<div class="img-wrapper first" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
+					</div>
+					<div class="img-wrapper second" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -58,8 +64,14 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_3, "third") }}
-	 		 		{{ ui.img(page.image_4, "fourth") }}
+	 		 		{# {{ ui.img(page.image_3, "third") }}
+	 		 		{{ ui.img(page.image_4, "fourth") }} #}
+	 		 		<div class="img-wrapper third" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_3).src }}" alt="{{ TimberImage(page.image_3).alt }}">
+					</div>
+					<div class="img-wrapper fourth" data-aos="fade-in">
+						<img src="{{ TimberImage(page.image_4).src }}" alt="{{ TimberImage(page.image_4).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -68,7 +80,7 @@
 	<section class='row images-3'>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-in">
 	 		 		{{ ui.img(page.image_5, "fifth") }}
 	 		 	</div>
 	 		</div>
@@ -79,8 +91,12 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.h2("Grid formats (spine left)") }}
-			 		{{ ui.img(page.grid_formats) }}
+	 		 		{# {{ ui.h2("Grid formats (spine left)") }} #}
+			 		{# {{ ui.img(page.grid_formats) }} #}
+			 		<h2 data-aos="fade-up">"Grid formats (spine left)"</h2>
+			 		<div class="img-wrapper" data-aos="fade-in">
+						<img src="{{ TimberImage(page.grid_formats).src }}" alt="{{ TimberImage(page.grid_formats).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

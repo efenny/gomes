@@ -170,6 +170,12 @@
                             transform: translateX(0);
                         }
                     }
+
+                    h2 {
+                        @include breakpoint($mobile-break) {
+                            font: $h3;
+                        }
+                    }
                 }
             }
         }

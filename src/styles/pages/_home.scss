@@ -13,7 +13,7 @@
             .case-study {
                 width: $col-vw * 4.75;
                 padding-bottom: $col-vw / 2;
-                margin: 0 ($col-vw / 4);
+                margin: 0 calc(#{$col-vw / 4} - 4px);
 
                 @include breakpoint($tablet-break) {
                     padding-bottom: $col-vw / 3;
@@ -26,52 +26,67 @@
                 }
 
 
-                .bg {
-                    width: 100%;
-                    height: $col-vw * 3.25;
-                    background-size: cover !important;
-                    background-position: center !important;
-
-                    @include breakpoint($tablet-break) {
-                        height: $col-vw * 3.5;
+                a {
+                    &:hover {
+                        .bg {
+                            transform: scale(0.985);
+                        }
                     }
 
+                    .case-study-inner {
+                        .bg {
+                            transition: $transition;
+                            width: 100%;
+                            height: $col-vw * 3.25;
+                            background-size: cover !important;
+                            background-position: center !important;
 
-                    @include breakpoint($mobile-break) {
-                        height: $col-vw * 6.5;
-                    }
-                }
-
-                .info {
-                    text-align: center;
-                    padding: 2.5rem;
-
-                    @include breakpoint($tablet-break) {
-                        padding: 1.5rem;
-                    }
+                            @include breakpoint($tablet-break) {
+                                height: $col-vw * 3.5;
+                            }
 
 
-                    h3 {
-                        margin-bottom: 1rem;
-                        position: relative;
-                        display: inline-block;
-                        width: auto;
-                        overflow: hidden;
+                            @include breakpoint($mobile-break) {
+                                height: $col-vw * 6.5;
+                            }
+                        }
+
+                        .info {
+                            text-align: center;
+                            padding: 2.5rem;
+
+                            @include breakpoint($tablet-break) {
+                                padding: 1.5rem;
+                            }
+
+
+                            h3 {
+                                margin-bottom: 1rem;
+                                position: relative;
+                                display: inline-block;
+                                width: auto;
+                                overflow: hidden;
+                            }
+                        }
                     }
                 }
 
                 &.blue-ocean,
                 &.the-francis-effect {
-                    .bg {
-                        height: $col-vw * 6.25;
+                    a {
+                        .case-study-inner {
+                            .bg {
+                                height: $col-vw * 6.25;
 
-                        @include breakpoint($tablet-break) {
-                            height: $col-vw * 6.5;
-                        }
+                                @include breakpoint($tablet-break) {
+                                    height: $col-vw * 6.5;
+                                }
 
 
-                        @include breakpoint($mobile-break) {
-                            height: $col-vw * 12.5;
+                                @include breakpoint($mobile-break) {
+                                    height: $col-vw * 12.5;
+                                }
+                            }
                         }
                     }
                 }

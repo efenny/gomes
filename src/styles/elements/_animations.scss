@@ -2,8 +2,21 @@
 //scroll animations
 [data-aos='fade-in'] {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(-1.25rem);
     transition-property: transform, opacity;
+    will-change: opacity, transform;
+
+    &.aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos='fade-up'] {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition-property: transform, opacity;
+    will-change: opacity, transform;
 
     &.aos-animate {
         opacity: 1;

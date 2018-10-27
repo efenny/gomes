@@ -50,7 +50,12 @@
 
         .col-inner {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+
+            @include breakpoint($mobile-break) {
+                flex-wrap: wrap;
+            }
+
 
             .first {
                 width: $col-vw * 5.5;
@@ -109,7 +114,12 @@
 
         .col-inner {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+
+            @include breakpoint($mobile-break) {
+                flex-wrap: wrap;
+            }
+
 
             .third {
                 width: $col-vw * 4;
@@ -167,7 +177,12 @@
 
         .col-inner {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+
+            @include breakpoint($mobile-break) {
+                flex-wrap: wrap;
+            }
+
 
             .fifth {
                 width: $col-vw * 5.5;

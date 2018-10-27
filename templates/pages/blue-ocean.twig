@@ -3,7 +3,7 @@
 {% block post %}
 	<section class='row intro s-top center no-gutters'>
 	 	<div class='row-inner'>
-	 		<div class='col text'>
+	 		<div class='col text' data-aos="fade-up">
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.p(page.grow) }}
 	 		 	</div>
@@ -13,7 +13,7 @@
 
 	<section class='row logo '>
 	 	<div class='row-inner'>
-	 		<div class='col col-12'>
+	 		<div class='col col-12' data-aos="fade-in">
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.img(page.logo) }}
 	 		 	</div>
@@ -26,7 +26,9 @@
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
 	 		 		{% for item in page.get_field('logo_development') %}
-		 				{{ ui.img(item.image) }}
+		 				<div class="img-wrapper" data-aos="fade-in">
+							<img src="{{ TimberImage(item.image).src }}" alt="{{ TimberImage(item.image).alt }}">
+						</div>
 		 			{% endfor %}
 	 		 	</div>
 	 		</div>
@@ -36,7 +38,7 @@
 	<section class='row center responsive s-bottom s-top no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.p(page.smooth) }}
 	 		 	</div>
 	 		</div>
@@ -47,8 +49,12 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.img(page.image_1, "first") }}
-	 		 		{{ ui.img(page.image_2, "second") }}
+	 		 		<div class="img-wrapper first" data-aos="fade-up">
+						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
+					</div>
+					<div class="img-wrapper second" data-aos="fade-up">
+						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -57,7 +63,7 @@
 	<section class='row images-2 s-bottom'>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
-	 		 	<div class='col-inner'>
+	 		 	<div class='col-inner' data-aos="fade-up">
 	 		 		{{ ui.img(page.image_3, "third") }}
 	 		 	</div>
 	 		</div>
@@ -74,14 +80,18 @@
 	 	<div class='row-inner'>
 	 		<div class='col color col-6'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.h3("Pantone 299 C<br>Hex #00A0DF") }}
-	 		 		{{ ui.img(page.color) }}
+	 		 		<h3 data-aos="fade-up">Pantone 299 C<br>Hex #00A0DF</h3>
+	 		 		<div class="img-wrapper second" data-aos="fade-in">
+						<img src="{{ TimberImage(page.color).src }}" alt="{{ TimberImage(page.color).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 		<div class='col typography col-6'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.h3("Effra Bold") }}
-	 		 		{{ ui.img(page.typography) }}
+	 		 		<h3 data-aos="fade-up">Effra Bold</h3>
+	 		 		<div class="img-wrapper second" data-aos="fade-in">
+						<img src="{{ TimberImage(page.typography).src }}" alt="{{ TimberImage(page.typography).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

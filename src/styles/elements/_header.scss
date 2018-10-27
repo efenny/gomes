@@ -4,10 +4,25 @@ header {
     display: flex;
     align-items: center;
     z-index: 11;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: $transition;
+    background: $white;
+    transform: translateY(-100px);
+    opacity: 0;
+
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
     .row {
         width: 100%;
+
+        .row-inner {
+            transform: translateY(-2px);
+        }
 
         .col {
             @include breakpoint($tablet-break) {
@@ -17,9 +32,16 @@ header {
 
             &.logo {
                 a {
+                    transition: $transition;
+
                     h3 {
                         display: inline-block;
                         width: auto;
+                        margin-bottom: 2px;
+                    }
+
+                    &:hover {
+                        opacity: 0.6;
                     }
                 }
             }
@@ -46,6 +68,7 @@ header {
 
                     li {
                         padding: 0 2rem;
+                        transform: translateY(8px);
 
                         &:first-child {
                             padding-left: 0;
@@ -166,7 +189,7 @@ header {
     width: 100%;
     height: calc(100vh - 100px);
     background: $white;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     z-index: 10;

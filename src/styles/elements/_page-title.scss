@@ -20,7 +20,7 @@
 
         .row-inner {
             height: 100%;
-            align-items: flex-end;
+            align-items: flex-start;
 
             @include breakpoint($tablet-break) {
                 align-items: center;
@@ -28,10 +28,11 @@
 
 
             .col {
-                padding-bottom: $col-vw;
+                padding-bottom: 0;
+                padding-top: $col-vw * 2;
 
                 @include breakpoint($tablet-break) {
-                    padding-bottom: 0;
+                    padding: 0;
                 }
 
 

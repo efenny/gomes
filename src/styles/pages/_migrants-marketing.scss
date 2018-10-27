@@ -57,21 +57,26 @@
 
     &.images-1 {
         @include breakpoint($mobile-break) {
-            padding-left: $col-vw !important;
-            padding-right: $col-vw !important;
+            padding-left: $col !important;
+            padding-right: $col !important;
         }
 
 
         .col-inner {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+
+            @include breakpoint($mobile-break) {
+                flex-wrap: wrap;
+            }
+
 
             .img-wrapper {
-                width: calc(50% - #{$col-vw / 2});
+                width: calc(50% - #{$col / 2});
 
                 &:last-child {
-                    padding-top: $col-vw;
+                    padding-top: $col;
                 }
 
                 @include breakpoint($mobile-break) {
@@ -82,29 +87,35 @@
     }
 
     &.images-2 {
-        padding-top: $col-vw;
+        padding-top: $col;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
 
         .img-wrapper {
-            width: $col-vw * 5.5;
+            margin-left: $col;
+            width: $col * 5.5;
 
             @include breakpoint($mobile-break) {
-                width: 100%;
+                width: $col * 10;
+                margin-right: $col;
             }
         }
     }
 
     &.images-3 {
-        padding-top: $col-vw;
+        padding-top: $col;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
 
         .col-inner {
             display: flex;
             justify-content: center;
 
             .img-wrapper {
-                width: $col-vw * 5.5;
+                width: $col * 5.5;
 
                 @include breakpoint($mobile-break) {
-                    width: 100%;
+                    width: $col * 10;
                 }
             }
         }

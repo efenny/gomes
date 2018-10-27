@@ -1,4 +1,12 @@
 // Row and Columns Style Sheet
+body {
+    main {
+        > .content {
+            margin-top: 100px;
+        }
+    }
+}
+
 // text wrapper
 .text-wrapper {
     &.med {
@@ -40,6 +48,9 @@
     &.box-shadow {
         img {
             @include box-shadow;
+
+            // box-shadow: none !important;
+       
         }
     }
 }

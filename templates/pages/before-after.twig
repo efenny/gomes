@@ -9,9 +9,12 @@
 	 		 		{{ ui.p('Drag the white bar to comapare the before/after images.', 'bottom') }}
 					{% for item in page.get_field('image') %}
 						<div class="item-wrapper">
-							{{ ui.img(item.before)}}
-							<div class="before" style="background-image:url('{{ TimberImage(item.before).src }}');"></div>
-							<div class="after" style="background-image:url('{{ TimberImage(item.after).src }}');"></div>
+							<div style="display: none;">
+								<img src="{{ TimberImage(item.before).src }}" alt="Before">
+							</div>
+							<div>
+								<img src="{{ TimberImage(item.after).src }}" alt="After">
+							</div>
 						</div>
 					{% else %}
 						{{ ui.h3('There are no items right now.') }}

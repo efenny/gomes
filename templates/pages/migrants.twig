@@ -3,7 +3,7 @@
 {% block post %}
 	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
-	 		<div class='col text'>
+	 		<div class='col text' data-aos="fade-up">
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.p(page.intro_text) }}
 	 		 	</div>
@@ -21,7 +21,7 @@
 
 	 		<div class='col image col-6'>
 	 		 	<div class='col-inner'>
-	 		 		<div data-retina class="img-wrapper box-shadow" >
+	 		 		<div data-retina data-aos="fade-up" class="img-wrapper box-shadow" >
 						<img src="{{ TimberImage(page.website_page).src }}" alt="{{ TimberImage(page.website_page).alt }}">
 					</div>
 	 		 	</div>
@@ -35,7 +35,7 @@
 	 		 	<div class='col-inner'>
 	 		 		<div class="image-wrapper">
 	 		 			{% for item in page.get_field('mobile_shots') %}
-	 		 				<div class="image-item">
+	 		 				<div data-aos="fade-up" class="image-item">
 	 		 					{{ ui.img(item.image, "box-shadow") }}
 	 		 				</div>
 	 		 			{% endfor %}
@@ -48,7 +48,7 @@
 	<section class='row center responsive s-bottom no-gutters'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
 	 		 		{{ ui.p(page.responsive) }}
 	 		 	</div>
 	 		</div>
@@ -64,7 +64,7 @@
 	<section class='row new center s-top s-bottom'>
 	 	<div class='row-inner'>
 	 		<div class='col text'>
-	 		 	<div class='col-inner'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
 	 		 		{{ ui.p(page.new_content) }}
 	 		 	</div>
 	 		</div>
@@ -75,8 +75,10 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.h2("Phase 1") }}
-			 		{{ ui.img(page.phase_1) }}
+	 		 		<h2 data-aos="fade-up">Phase 1</h2>
+			 		<div class="img-wrapper" data-aos="fade-in">
+						<img src="{{ TimberImage(page.phase_1).src }}" alt="{{ TimberImage(page.phase_1).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -86,8 +88,10 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		{{ ui.h2("Phase 2") }}
-			 		{{ ui.img(page.phase_2) }}
+	 		 		<h2 data-aos="fade-up">Phase 2</h2>
+			 		<div class="img-wrapper" data-aos="fade-in">
+						<img src="{{ TimberImage(page.phase_2).src }}" alt="{{ TimberImage(page.phase_2).alt }}">
+					</div>
 	 		 	</div>
 	 		</div>
 	 	</div>

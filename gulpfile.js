@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
     babel = require('gulp-babel');
+    autoprefixer = require('gulp-autoprefixer');
 
 var scssSource = ['src/styles/main.scss'],
     scssWatch = ['src/styles/**/*.scss'],
@@ -10,11 +11,14 @@ var scssSource = ['src/styles/main.scss'],
     javascriptWatch = ['src/js/**/*.js'];
 
 
-
 gulp.task('sass', function() {
     return gulp.src(scssSource)
         .pipe(sass({
             outputStyle: 'compressed'
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
         }))
         .pipe(gulp.dest('dist/css'))
 });

@@ -3,14 +3,11 @@
 @import 'utility/typography';
 @import 'utility/mixins';
 @import 'vendors/aos';
+@import 'vendors/compare';
 @import 'pages/base';
 
 .home {
     @import 'pages/home';
-}
-
-.page-id-x {
-    @import 'pages/gallery';
 }
 
 .page-id-12 {

@@ -18,9 +18,14 @@ body {
                         opacity: 1;
                     }
 
-                    100% {
+                    99% {
                         opacity: 0;
+                    }
+
+                    100% {
+                        display: none;
                         pointer-events: none;
+                        visibility: hidden;
                     }
                 }
             }
