@@ -4,7 +4,7 @@
  		 	<div class='col-inner'>
  		 		<div class="color-wrapper">
  		 			{% for item in page.get_field('colours') %}
-		 				<div class="colour-item" style="background: {{ item.hex }}">
+		 				<div data-aos='fade' class="colour-item" style="background: {{ item.hex }}">
 	 						{{ ui.p(item.hex) }}
 		 				</div>
 		 			{% endfor %}

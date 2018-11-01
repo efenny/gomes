@@ -5,7 +5,7 @@
 	<section class='row retouching'>
 	 	<div class='row-inner'>
 	 		{% for item in page.get_field('images') %}
-	 			<article data-aos="fade-up" class="retouched width-{{ item.width }}" data-slide-Number="{{ item.number_in_gallery }}">
+	 			<article data-aos="image-up" class="retouched width-{{ item.width }} {% if loop.index == 2 %}sizer{% endif %}" data-slide-Number="{{ item.number_in_gallery }}">
 	 				<a href="{{site.url}}/{{ item.gallery_associated_with }}/#{{ item.number_in_gallery }}">
 	 					{{ ui.img(item.normal_display) }}
 	 				</a>

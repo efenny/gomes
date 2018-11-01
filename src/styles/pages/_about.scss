@@ -4,10 +4,10 @@
         .row-inner {
             min-height: calc(100vh - 200px);
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
 
             .col {
-                width: ($col-vw * 3) !important;
+                width: ($col-vw * 5) !important;
 
                 @include breakpoint($laptop-break) {
                     width: 60% !important;
@@ -65,7 +65,7 @@
                     align-items: center;
 
                     a {
-                        padding: 1rem;
+                        padding: 2.75rem;
 
                         .img-wrapper {
                             width: 40px;

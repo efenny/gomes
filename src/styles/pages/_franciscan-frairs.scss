@@ -98,6 +98,7 @@
                 @for $i from 1 through 2 {
                     &:nth-child(#{$i + 1}) {
                         padding-top: $col-vw / 2 * $i;
+                        transition-delay: (0.3s * $i) !important;
                     }
 
                     @include breakpoint($tablet-break) {
@@ -209,6 +210,16 @@
                     align-items: flex-end;
                     height: $col-vw * 1.5;
 
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: 0.3s * $i;
+
+                            .text-wrapper {
+                                transition-delay: 0.3s * $i + 0.95;
+                            }
+                        }
+                    }
+
                     &:nth-child(1),
                     &:nth-child(2),
                     &:nth-child(3) {
@@ -260,10 +271,10 @@
                     }
 
                     .text-wrapper {
-                        width: 100%;
+                        width: 105%;
                         padding: 1rem;
                         background: rgba(255, 255, 255, 0.25);
-                        transition: $transition;
+                        transition: $transition-slow;
 
                         @include breakpoint($mobile-break) {
                             padding: 0.5rem;

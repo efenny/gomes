@@ -50,8 +50,6 @@ function animateLetters(element) {
 
 // before and after page
 function beforeAfter() {
-	
-
 	var $window = jQuery(window);
 	var windowsize = $window.width();
 	if(windowsize < 1024) {
@@ -71,70 +69,7 @@ function beforeAfter() {
 			});
 		});
 	}
-
-
-	
-
-
-	// let items = document.getElementsByClassName('item-wrapper');
-
-	// // set the initial sizes for the elements
-	// function sizing(elements) {
-	// 	for (let item of elements) {
-	// 		let itemHeight = item.children[0].clientHeight;
-	// 		let itemWidth = item.children[0].clientWidth;
-
-	// 		// only need to affect the second and third items
-	// 		for (let i = 1; i < 3; i++) {
-	// 			item.children[i].style.height = ''+itemHeight+'px';
-	// 			item.children[i].style.width = ''+itemWidth/2+'px';
-	// 			item.children[i].style.backgroundSize = ''+itemWidth+'px '+itemHeight+'px';
-	// 		}
-	// 	}
-	// }
-
-	// // mouse and touch 
-	// function movement(elements) {
-	// 	let x = undefined;
-	// 	let width = undefined;
-
-	// 	for (let item of elements) {
-	// 		function setComp() {
-	// 			let itemSize = item.getBoundingClientRect();
-
-	// 			x = itemSize.x;
-	// 			width = itemSize.width;
-	// 		}
-
-
-	// 		function moveComp(e) {
-	// 			var horizontal = (e.clientX - x) / width * 100;
-	// 		    item.children[item.children.length-1].style.setProperty('width', horizontal + '%');
-	// 		}
-
-	// 		function endComp(e) {
-
-	// 		}
-
-	// 		item.addEventListener('mouseenter', setComp);
-	// 		item.addEventListener('touchstart', setComp);
-	// 		item.addEventListener('mousemove', moveComp);
-	// 		item.addEventListener('touchmove', moveComp);
-	// 	}
-	// }
-
-	// // on resize, adjust the sizing
-	// window.addEventListener('resize', function(){
-	// 	sizing(items);
-	// });
-
-	// // initialize
-	// movement(items);
-	// sizing(items);
 }
-
-
-
 
 const mobileMenuFunctionality = () => {
 	let mobileBtn = document.getElementsByClassName('mobile-button')[0];
@@ -231,7 +166,7 @@ const homeMasonry = () => {
 		    masonry: {
 		        columnWidth: '.blue-ocean'
 		    }
-		});
+		}); 
 }
 
 
@@ -247,7 +182,7 @@ const retouchedMasonry = () => {
 	  transitionDuration: 0,
 	  masonry: {
 	    // use element for option
-	    columnWidth: '.width-3'
+	    columnWidth: '.sizer'
 	  }
 	});
 }
@@ -290,8 +225,9 @@ window.onload = function() {
 	Ready();
 
 	AOS.init({
-		duration: 600,
-		anchorPlacement: 'center-top' 
+		duration: 650,
+		anchorPlacement: 'center-top',
+		once: true 
 	});
 	
 

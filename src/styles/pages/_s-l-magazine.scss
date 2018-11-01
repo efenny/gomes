@@ -123,6 +123,7 @@
                 overflow: hidden;
                 display: flex;
                 align-items: flex-end;
+                transition-delay: 0.3s !important;
 
                 img {
                     @include breakpoint($tablet-break) {
@@ -132,6 +133,7 @@
 
                     @include breakpoint($mobile-break) {
                         width: 100%;
+                        transition-delay: 0s !important;
                     }
                 }
 
@@ -165,6 +167,7 @@
                 width: $col * 4.5;
                 margin-left: $col;
                 margin-top: $col / 2;
+                transition-delay: 0.3s !important;
 
                 @include breakpoint($tablet-break) {
                     margin-left: 0;
@@ -176,6 +179,7 @@
                     width: 100%;
                     padding: 0 $col;
                     margin: 0;
+                    transition-delay: 0 !important;
                 }
             }
 

@@ -6,7 +6,7 @@
 	 	<div class='row-inner'>
 	 		<div class='col'>
 	 		 	<div class='col-inner' data-aos="fade-up">
-	 		 		{{ ui.p(page.text) }}
+	 		 		{{ ui.h3(page.text) }}
 	 		 		<div class="social-wrapper">
 	 		 			{% for item in page.get_field('social_platforms') %}
 		 		 			<a href="{{ item.link.url }}" target="_blank">{{ ui.img(item.logo) }}</a>

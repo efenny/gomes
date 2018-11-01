@@ -2,9 +2,10 @@
 //scroll animations
 [data-aos='fade-in'] {
     opacity: 0;
-    transform: translateY(-1.25rem);
+    transform: translateY(-1.65rem);
     transition-property: transform, opacity;
     will-change: opacity, transform;
+    transition: $transition-slow !important;
 
     &.aos-animate {
         opacity: 1;
@@ -14,9 +15,23 @@
 
 [data-aos='fade-up'] {
     opacity: 0;
-    transform: translateY(1.25rem);
+    transform: translateY(1.65rem);
     transition-property: transform, opacity;
     will-change: opacity, transform;
+    transition: $transition-slow !important;
+
+    &.aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos='image-up'] {
+    opacity: 0;
+    transform: translateY(4.25rem);
+    transition-property: transform, opacity;
+    will-change: opacity, transform;
+    transition: $transition-slow !important;
 
     &.aos-animate {
         opacity: 1;
@@ -25,9 +40,33 @@
 }
 
 [data-aos='fade'] {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition-property: transform;
+    will-change: transform;
+    transition: $transition-slow;
+
+    .text-wrapper {
+        opacity: 0;
+        transition-property: opacity;
+        will-change: opacity;
+        transition: $transition-slow;
+    }
+
+    &.aos-animate {
+        transform: scaleY(1) !important;
+
+        .text-wrapper {
+            opacity: 1;
+        }
+    }
+}
+
+[data-aos='swatch'] {
     opacity: 0;
     transition-property: opacity;
     will-change: opacity;
+    transition: $transition-slow;
 
     &.aos-animate {
         opacity: 1;

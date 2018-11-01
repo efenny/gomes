@@ -31,15 +31,15 @@
             }
 
             .item-wrapper {
-                margin-bottom: $col-vw * 1.25;
+                margin-bottom: $col-vw * 1;
 
                 @include breakpoint($tablet-break) {
-                    margin-bottom: $col-vw * 2.5;
+                    margin-bottom: $col-vw * 1;
                 }
 
 
                 @include breakpoint($mobile-break) {
-                    margin-bottom: $col-vw * 2.75;
+                    margin-bottom: $col-vw * 1;
                 }
 
 

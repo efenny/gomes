@@ -3,7 +3,7 @@
 {% block post %}
 	<section class='row intro s-top center no-gutters'>
 	 	<div class='row-inner'>
-	 		<div class='col text' data-aos="fade-up">
+	 		<div class='col text'>
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.p(page.grow) }}
 	 		 	</div>
@@ -26,7 +26,7 @@
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
 	 		 		{% for item in page.get_field('logo_development') %}
-		 				<div class="img-wrapper" data-aos="fade-in">
+		 				<div class="img-wrapper" data-aos="image-up">
 							<img src="{{ TimberImage(item.image).src }}" alt="{{ TimberImage(item.image).alt }}">
 						</div>
 		 			{% endfor %}
@@ -49,10 +49,10 @@
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
 	 		 	<div class='col-inner'>
-	 		 		<div class="img-wrapper first" data-aos="fade-up">
+	 		 		<div class="img-wrapper first" data-aos="image-up">
 						<img src="{{ TimberImage(page.image_1).src }}" alt="{{ TimberImage(page.image_1).alt }}">
 					</div>
-					<div class="img-wrapper second" data-aos="fade-up">
+					<div class="img-wrapper second" data-aos="image-up">
 						<img src="{{ TimberImage(page.image_2).src }}" alt="{{ TimberImage(page.image_2).alt }}">
 					</div>
 	 		 	</div>
@@ -63,7 +63,7 @@
 	<section class='row images-2 s-bottom'>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
-	 		 	<div class='col-inner' data-aos="fade-up">
+	 		 	<div class='col-inner' data-aos="image-up">
 	 		 		{{ ui.img(page.image_3, "third") }}
 	 		 	</div>
 	 		</div>

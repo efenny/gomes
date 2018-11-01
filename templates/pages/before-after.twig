@@ -7,10 +7,10 @@
 	 		<div class='col 12'>
 	 		 	<div class='col-inner'>
 	 		 		<div class="text-wrapper" data-aos="fade-up">
-	 		 			<p>Drag the white bar to comapare the before/after images.', 'bottom</p>
+	 		 			<p>Drag the white bar to compare the before/after images.</p>
 	 		 		</div>
 					{% for item in page.get_field('image') %}
-						<div class="item-wrapper" data-aos="fade-in">
+						<div class="item-wrapper" {% if loop.index == 1 %}data-aos="fade-in"{% endif %}>
 							<div style="display: none;">
 								<img src="{{ TimberImage(item.before).src }}" alt="Before">
 							</div>

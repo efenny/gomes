@@ -29,7 +29,7 @@
                 a {
                     &:hover {
                         .bg {
-                            transform: scale(0.985);
+                            transform: scale(1);
                         }
                     }
 
@@ -40,6 +40,10 @@
                             height: $col-vw * 3.25;
                             background-size: cover !important;
                             background-position: center !important;
+
+                            &:hover {
+                                transform: scale(0.985);
+                            }
 
                             @include breakpoint($tablet-break) {
                                 height: $col-vw * 3.5;

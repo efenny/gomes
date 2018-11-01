@@ -44,6 +44,14 @@
             .img-wrapper {
                 width: calc(50% - #{$col-vw / 2});
 
+                &:nth-child(2) {
+                    transition-delay: 0.3s !important;
+
+                    @include breakpoint($mobile-break) {
+                        transition-delay: 0 !important;
+                    }
+                }
+
                 @include breakpoint($mobile-break) {
                     width: 100%;
 
@@ -77,6 +85,11 @@
 
                 &:last-child {
                     padding-top: $col;
+                    transition-delay: 0.3s !important;
+
+                    @include breakpoint($mobile-break) {
+                        transition-delay: 0 !important;
+                    }
                 }
 
                 @include breakpoint($mobile-break) {

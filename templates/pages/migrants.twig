@@ -3,7 +3,7 @@
 {% block post %}
 	<section class='row intro s-top center s-bottom no-gutters'>
 	 	<div class='row-inner'>
-	 		<div class='col text' data-aos="fade-up">
+	 		<div class='col text' >
 	 		 	<div class='col-inner'>
 	 		 		{{ ui.p(page.intro_text) }}
 	 		 	</div>
@@ -16,15 +16,15 @@
 	 		<div class='col info fixed-scroll col-6'>
 	 		 	<div class='col-inner'>
 	 		 		{# {{ ui.p(page.description) }} #}
-	 		 		<div class="text-wrapper" data-aos="fade-in">
-	 		 			<p>{{ page.description }}</p>
+	 		 		<div class="text-wrapper" >
+	 		 			<p data-aos="fade-in">{{ page.description }}</p>
 	 		 		</div>
 	 		 	</div>
 	 		</div>
 
 	 		<div class='col image col-6'>
 	 		 	<div class='col-inner'>
-	 		 		<div data-retina data-aos="fade-in" class="img-wrapper box-shadow" >
+	 		 		<div data-retina data-aos="image-up" class="img-wrapper box-shadow" >
 						<img src="{{ TimberImage(page.website_page).src }}" alt="{{ TimberImage(page.website_page).alt }}">
 					</div>
 	 		 	</div>
@@ -38,7 +38,7 @@
 	 		 	<div class='col-inner'>
 	 		 		<div class="image-wrapper">
 	 		 			{% for item in page.get_field('mobile_shots') %}
-	 		 				<div data-aos="fade-in" class="image-item">
+	 		 				<div data-aos="image-up" class="image-item">
 	 		 					{{ ui.img(item.image, "box-shadow") }}
 	 		 				</div>
 	 		 			{% endfor %}
