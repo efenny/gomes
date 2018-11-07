@@ -24,12 +24,15 @@
                 a {
                     &:hover {
                         .img-wrapper {
-                            transform: scale(0.97);
+                            transform: scale(0.9675) rotate(0.02deg);
                         }
                     }
 
                     .img-wrapper {
-                        transition: $transition;
+                        transition: $transition-tile;
+                        -webkit-perspective: 1000;
+                        -webkit-backface-visibility: hidden;
+                        will-change: transform;
                     }
                 }
 

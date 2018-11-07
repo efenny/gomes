@@ -130,22 +130,22 @@ const highRez = () => {
 const scrollingMenu = () => {
 	var lastScrollTop = 0;
 	jQuery(window).scroll(function() {
-        if (jQuery(document).scrollTop() > 100) {
-            jQuery('header').removeClass('active');
-        }
-        else { 
-            jQuery('header').addClass('active');
-        }
+        
 
         var st = jQuery(this).scrollTop();
 		if (st > lastScrollTop){
 		    // downscroll code
 		    jQuery('header').removeClass('active');
-		} else { 
+		} else if(st < lastScrollTop || st > 100) { 
 		    // upscroll code
 		    jQuery('header').addClass('active');
 		}
 		lastScrollTop = st;
+
+		if (jQuery(document).scrollTop() < 100) {
+            jQuery('header').addClass('active');
+        }
+       
     });
 }
 

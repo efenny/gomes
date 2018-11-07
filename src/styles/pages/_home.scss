@@ -35,14 +35,17 @@
 
                     .case-study-inner {
                         .bg {
-                            transition: $transition;
+                            transition: $transition-tile;
                             width: 100%;
                             height: $col-vw * 3.25;
                             background-size: cover !important;
                             background-position: center !important;
+                            -webkit-perspective: 1000;
+                            -webkit-backface-visibility: hidden;
+                            will-change: transform;
 
                             &:hover {
-                                transform: scale(0.985);
+                                transform: scale(0.9675) rotate(0.02deg);
                             }
 
                             @include breakpoint($tablet-break) {

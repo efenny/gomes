@@ -28,6 +28,18 @@ body {
     * {
         box-sizing: border-box;
     }
+
+    &.visited,
+    &.first-visit {
+        #main {
+            opacity: 1;
+        }
+    }
+
+    #main {
+        opacity: 0;
+        transition: $transition;
+    }
 }
 
 h1 {
