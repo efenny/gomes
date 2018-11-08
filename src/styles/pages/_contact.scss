@@ -35,6 +35,11 @@
                         // animation-delay: 0.25s;
                         // opacity: 0;
 
+                        @include breakpoint($mobile-break) {
+                            font-size: 1.5rem !important;
+                        }
+
+
                         &::before {
                             content: '';
                             width: 100%;
