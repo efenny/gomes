@@ -167,6 +167,8 @@ const homeMasonry = () => {
 		        columnWidth: '.blue-ocean'
 		    }
 		}); 
+
+	jQuery(homemason).isotope('reloadItems');
 }
 
 
@@ -189,8 +191,7 @@ const retouchedMasonry = () => {
 
 function Ready() {
 	// pageTransitions();
-	firstLoad();
-	splashOpening();
+	
 	mobileMenuFunctionality();
 	scrollingMenu();
 
@@ -213,23 +214,59 @@ function Ready() {
 		homeMasonry();
 	}
 
-	if(document.getElementsByClassName('content')[0].className.match('page-id-12')) {
-		aboutPage();
-	}
+	// if(document.getElementsByClassName('content')[0].className.match('page-id-12')) {
+	// 	aboutPage();
+	// }
+ 
+	
+}
 
-	highRez();
+
+// Detect IE
+function detectIE() {
+    var ua = window.navigator.userAgent;
+
+    var msie = ua.indexOf('MSIE ');
+    var trident = ua.indexOf('Trident/');
+    var edge = ua.indexOf('Edge/');
+
+    if (msie > 0) {
+        // IE 10 or older => return version number
+        console.log(parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10));
+        jQuery("#main").css("opacity", "1");
+        jQuery("[data-aos]").css("opacity", "1");
+        jQuery("[data-aos]").css("transform", "translateY(0)");
+    } else if (trident > 0) {
+        // IE 11 => return version number
+        var rv = ua.indexOf('rv:');
+        console.log(parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10));
+        jQuery("#main").css("opacity", "1");
+        jQuery("[data-aos]").css("opacity", "1");
+        jQuery("[data-aos]").css("transform", "translateY(0)");
+    } else if (edge > 0) {
+       // Edge (IE 12+) => return version number
+       console.log(parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10));
+       jQuery("#main").css("opacity", "1");
+        jQuery("[data-aos]").css("opacity", "1");
+        jQuery("[data-aos]").css("transform", "translateY(0)");
+    } else {
+
+		firstLoad();
+		splashOpening();
+    	AOS.init({
+			duration: 650,
+			anchorPlacement: 'center-top',
+			once: true 
+		});
+		highRez();
+	}
 }
 
 // fire when the page is fully loaded
 window.onload = function() {
 	Ready();
 
-	AOS.init({
-		duration: 650,
-		anchorPlacement: 'center-top',
-		once: true 
-	});
-	
+	detectIE();
 
 	
 }

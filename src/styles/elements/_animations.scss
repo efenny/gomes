@@ -6,6 +6,7 @@
     transition-property: transform, opacity;
     will-change: opacity, transform;
     transition: $transition-slow !important;
+    box-shadow: 0 0 0;
 
     &.aos-animate {
         opacity: 1;
@@ -19,6 +20,7 @@
     transition-property: transform, opacity;
     will-change: opacity, transform;
     transition: $transition-slow !important;
+    box-shadow: 0 0 0;
 
     &.aos-animate {
         opacity: 1;

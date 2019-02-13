@@ -1,5 +1,7 @@
 // Migrants - Website Style Sheet
 .row {
+    overflow: hidden;
+
     &.page-title {
         h1 {
             max-width: 36rem;
@@ -52,6 +54,11 @@
                         width: $col-vw * 3;
                         margin-left: 0 !important;
 
+                        @include breakpoint($laptop-break-sml) {
+                            width: $col-vw * 3.5;
+                        }
+
+
                         @include breakpoint($tablet-break) {
                             padding-top: 0;
 
@@ -65,6 +72,11 @@
         .img-wrapper {
             @include breakpoint($tablet-break) {
                 padding: 0 ($col-vw / 2);
+            }
+
+
+            @include breakpoint($mobile-break) {
+                padding: 0;
             }
         }
     }
@@ -97,6 +109,11 @@
 
                 @for $i from 1 through 2 {
                     &:nth-child(#{$i + 1}) {
+                        @include breakpoint($mobile-break) {
+                            transition-delay: 0s !important;
+                        }
+
+
                         margin-top: $col-vw / 2 * $i;
                         padding-top: 0;
                         transition-delay: (0.3s * $i) !important;
@@ -145,6 +162,54 @@
         }
     }
 
+    &.responsive-columns {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    &.typography-image {
+        padding-left: ($col-vw * 3) !important;
+        padding-right: ($col-vw * 3) !important;
+
+        @include breakpoint($laptop-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+    }
+
+    &.flow-chart {
+        padding-left: ($col-vw * 3) !important;
+        padding-right: ($col-vw * 3) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 2) !important;
+            padding-right: ($col-vw * 2) !important;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+    }
+
     &.phase-one {
         @include s-padding-bottom($standard);
 
@@ -163,6 +228,15 @@
 
     &.phase-one,
     &.phase-two {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
+
+
         h2 {
             @include s-margin-bottom($standard / 2);
         }

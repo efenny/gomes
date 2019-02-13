@@ -3,7 +3,9 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
     babel = require('gulp-babel');
-    autoprefixer = require('gulp-autoprefixer');
+    postcss = require('gulp-postcss');
+    autoprefixer = require('autoprefixer');
+    flexibility = require('postcss-flexibility')
 
 var scssSource = ['src/styles/main.scss'],
     scssWatch = ['src/styles/**/*.scss'],
@@ -16,10 +18,10 @@ gulp.task('sass', function() {
         .pipe(sass({
             outputStyle: 'compressed'
         }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+        .pipe(postcss([ autoprefixer({ 
             cascade: false
-        }))
+        }) ]))
+        .pipe(postcss([ flexibility ]))
         .pipe(gulp.dest('dist/css'))
 });
 

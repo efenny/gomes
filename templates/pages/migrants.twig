@@ -24,9 +24,19 @@
 
 	 		<div class='col image col-6'>
 	 		 	<div class='col-inner'>
-	 		 		<div data-retina data-aos="image-up" class="img-wrapper box-shadow" >
+	 		 		<div data-aos="image-up" class="img-wrapper box-shadow" >
 						<img src="{{ TimberImage(page.website_page).src }}" alt="{{ TimberImage(page.website_page).alt }}">
 					</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row center responsive s-bottom no-gutters'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
+	 		 		{{ ui.p(page.pre_mobile) }}
 	 		 	</div>
 	 		</div>
 	 	</div>
@@ -74,6 +84,78 @@
 	 	</div>
 	</section>
 
+	<section class='row responsive-columns'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+			 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.responsive_columns).src }}" alt="{{ TimberImage(page.responsive_columns).alt }}">
+					</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row new typography-text center s-top s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
+	 		 		{{ ui.p(page.typography_text) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+
+	<section class='row typography-image'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+			 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.typography).src }}" alt="{{ TimberImage(page.typography).alt }}">
+					</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+
+	<section class='row new brainstorming center s-top s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
+	 		 		{{ ui.p(page.brain_storming) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	<section class='row flow-chart'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+			 		<div class="img-wrapper" data-aos="fade-up">
+						<img src="{{ TimberImage(page.flow_chart).src }}" alt="{{ TimberImage(page.flow_chart).alt }}">
+					</div>
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+
+	<section class='row new pre-wireframes center s-top s-bottom'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
+	 		 		{{ ui.p(page.pre_wireframes) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
+
+	
+
+
 	<section class='row phase-one'>
 	 	<div class='row-inner'>
 	 		<div class='col col-12'>
@@ -100,6 +182,18 @@
 	 	</div>
 	</section>
 
+
+
 	{% include 'partial/color.twig' %}
+
+	<section class='row new center s-top'>
+	 	<div class='row-inner'>
+	 		<div class='col text'>
+	 		 	<div data-aos="fade-up" class='col-inner'>
+	 		 		{{ ui.p(page.conclusion) }}
+	 		 	</div>
+	 		</div>
+	 	</div>
+	</section>
 
 {% endblock %}

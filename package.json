@@ -20,7 +20,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "postcss-flexibility": "^2.0.0"
   },
   "sasslintConfig": "sass-lint.yml",
   "repository": {

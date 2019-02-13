@@ -2,7 +2,10 @@
 .row {
     &.about {
         .row-inner {
-            min-height: calc(100vh - 200px);
+            min-height: 800px;
+
+            // min-height: 100vh;
+            // min-height: calc(100vh - 200px);
             align-items: center;
             justify-content: flex-start;
 

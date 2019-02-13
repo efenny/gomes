@@ -74,18 +74,20 @@ MEDIA QUERY (MQ)
 }
 
 @mixin side-gutters-lrg {
-    padding-left: ($col-vw * 2) !important;
-    padding-right: ($col-vw * 2) !important;
+    &.lrg-gutters {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
 
-    @include breakpoint($tablet-break) {
-        padding-left: ($col-vw * 1) !important;
-        padding-right: ($col-vw * 1) !important;
-    }
+        @include breakpoint($tablet-break) {
+            padding-left: ($col-vw * 1) !important;
+            padding-right: ($col-vw * 1) !important;
+        }
 
 
-    @include breakpoint($mobile-break) {
-        padding-left: $col-vw !important;
-        padding-right: $col-vw !important;
+        @include breakpoint($mobile-break) {
+            padding-left: $col-vw !important;
+            padding-right: $col-vw !important;
+        }
     }
 }
 
