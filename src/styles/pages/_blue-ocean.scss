@@ -211,7 +211,7 @@
         .col {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: stretch;
             width: 50% !important;
 
             @include breakpoint($mobile-break) {
@@ -222,6 +222,10 @@
 
             .col-inner {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
             }
 
             &.color {
