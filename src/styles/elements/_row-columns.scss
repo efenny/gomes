@@ -68,6 +68,12 @@ body {
         padding-right: 0 !important;
     }
 
+    @include side-gutters-lrg;
+
+    &.x-lrg-gutters {
+        @include side-gutters-x-lrg;
+    }
+
     .row-inner {
         display: flex;
         flex-wrap: wrap;

@@ -91,6 +91,22 @@ MEDIA QUERY (MQ)
     }
 }
 
+@mixin side-gutters-x-lrg {
+    padding-left: ($col-vw * 3) !important;
+    padding-right: ($col-vw * 3) !important;
+
+    @include breakpoint($tablet-break) {
+        padding-left: ($col-vw * 2) !important;
+        padding-right: ($col-vw * 2) !important;
+    }
+
+
+    @include breakpoint($mobile-break) {
+        padding-left: $col-vw !important;
+        padding-right: $col-vw !important;
+    }
+}
+
 // padding top
 @mixin padding-top($pad) {
     padding-top: $pad;

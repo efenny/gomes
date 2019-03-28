@@ -22,6 +22,15 @@
         }
     }
 
+    &.concepts {
+        padding-left: ($col-vw * 3.5) !important;
+        padding-right: ($col-vw * 3.5) !important;
+
+        @include breakpoint($tablet-break) {
+            @include side-gutters-x-lrg;
+        }
+    }
+
     &.background {
         height: $col-vw * 5;
         background-size: cover !important;
