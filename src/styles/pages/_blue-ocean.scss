@@ -196,10 +196,10 @@
     &.color-typ {
         h3 {
             font-family: $sans-serif;
-            padding-bottom: 2rem;
+            padding-bottom: 3rem;
 
             @include breakpoint($tablet-break) {
-                padding-bottom: 1.75rem;
+                padding-bottom: 2rem;
             }
 
 

@@ -1,0 +1,38 @@
+// Cookies Style Sheet
+.cn-bottom {
+    .cookie-notice-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem ($col-vw * 2);
+
+        @include breakpoint($tablet-break) {
+            padding: 1rem $col-vw;
+        }
+
+
+        a {
+            text-transform: uppercase;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: $black;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                transform: scaleX(0);
+                transition: $transition;
+                transform-origin: left center;
+            }
+
+            &:hover {
+                &::before {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
