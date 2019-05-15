@@ -44,6 +44,10 @@ body {
     }
 }
 
+video {
+    width: 100%;
+}
+
 h1 {
     @include breakpoint($tablet-break) {
         font-size: 3.5rem;

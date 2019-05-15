@@ -1,16 +1,38 @@
 // Retouching Style Sheet
 .row {
+    &.pre {
+        padding-left: ($col-vw / 4 * 2.75) !important;
+        padding-right: ($col-vw / 4 * 2.75) !important;
+
+        .col-inner {
+            text-align: center;
+
+            .text-wrapper {
+                padding-top: $col-vw / 2;
+                padding-bottom: $col-vw;
+
+                @include breakpoint($tablet-break) {
+                    padding-bottom: $col-vw * 1.5;
+                }
+
+
+                @include breakpoint($mobile-break) {
+                    padding-bottom: $col-vw;
+                }
+            }
+        }
+    }
+
     &.retouching {
         padding-left: ($col-vw / 4 * 2.75) !important;
         padding-right: ($col-vw / 4 * 2.75) !important;
 
-        @include padding-top($col-vw / 4);
-        @include padding-bottom($col-vw / 4);
+        // @include padding-top($col-vw / 4);
+        // @include padding-bottom($col-vw / 4);
 
-        @include breakpoint($mobile-break) {
-            padding-top: $col-vw / 2;
-        }
-
+        // @include breakpoint($mobile-break) {
+        //     padding-top: $col-vw / 2;
+        // }
 
         .row-inner {
             display: block;

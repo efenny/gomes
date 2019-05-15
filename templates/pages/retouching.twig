@@ -2,8 +2,20 @@
 {% import 'partial/ui.twig' as ui %}
 
 {% block content %}
+	<section class='row pre'>
+	 	<div class='row-inner'>
+	 		<div class='col col-12'>
+	 		 	<div class='col-inner'>
+	 		 		<div class="text-wrapper" data-aos="fade-up">
+			 			<p>Click on an image to view the series.</p>
+			 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div> 
+	</section>
 	<section class='row retouching'>
 	 	<div class='row-inner'>
+	 		
 	 		{% for item in page.get_field('images') %}
 	 			<article data-aos="image-up" class="retouched width-{{ item.width }} {% if loop.index == 2 %}sizer{% endif %}" data-slide-Number="{{ item.number_in_gallery }}">
 	 				<a href="{{site.url}}/{{ item.gallery_associated_with }}/#{{ item.number_in_gallery }}">

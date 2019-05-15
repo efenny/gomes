@@ -1,0 +1,60 @@
+// Switchboard Style Sheet
+.row {
+    &.intro {
+        &::before {
+            content: '';
+            width: $col-vw * 10;
+            height: 2px;
+            background: $gray;
+            position: absolute;
+            bottom: 0;
+            left: $col-vw;
+        }
+    }
+
+    &.background {
+        height: $col-vw * 8;
+        background-size: cover !important;
+        background-position: center !important;
+
+        @include breakpoint($laptop-break) {
+            height: $col-vw * 8.5;
+        }
+
+
+        @include breakpoint($tablet-break) {
+            height: $col-vw * 9.5;
+        }
+
+
+        @include breakpoint($mobile-break) {
+            height: $col-vw * 10.5;
+        }
+    }
+
+    &.two-cols {
+        .col {
+            &:first-child {
+                padding-right: $col-vw / 2;
+                width: 50% !important;
+
+                @include breakpoint($mobile-break) {
+                    width: 100% !important;
+                    padding: 0 $col-vw;
+                }
+            }
+
+            &:last-child {
+                padding-left: $col-vw / 2;
+                width: 50% !important;
+
+                @include breakpoint($mobile-break) {
+                    width: 100% !important;
+                    padding: 0 $col-vw;
+
+                    @include s-padding-top($standard);
+                }
+            }
+        }
+    }
+}
