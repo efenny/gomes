@@ -268,5 +268,27 @@ window.onload = function() {
 
 	detectIE();
 
-	
+	// Get media - with autoplay disabled (audio or video)
+    var media = jQuery('video').not("[autoplay='autoplay']");
+    var tolerancePixel = 300;
+
+    function checkMedia(){
+        // Get current browser top and bottom
+        var scrollTop = jQuery(window).scrollTop() + tolerancePixel;
+        var scrollBottom = jQuery(window).scrollTop() + jQuery(window).height() - tolerancePixel;
+
+        media.each(function(index, el) {
+            var yTopMedia = jQuery(this).offset().top;
+            var yBottomMedia = jQuery(this).height() + yTopMedia;
+
+            if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
+                jQuery(this).get(0).play();
+            } else {
+                jQuery(this).get(0).pause();
+            }
+        });
+
+        //}
+    }
+    jQuery(document).on('scroll', checkMedia);
 }

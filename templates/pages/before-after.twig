@@ -10,7 +10,7 @@
 	 		 			<p>Drag the white bar to compare the before/after images.</p>
 	 		 		</div>
 					{% for item in page.get_field('image') %}
-						<div class="item-wrapper" {% if loop.index == 1 %}data-aos="fade-in"{% endif %}>
+						<div class="item-wrapper" {% if loop.index == 1 %}data-aos="image-up"{% endif %}>
 							<div style="display: none;">
 								<img src="{{ TimberImage(item.before).src }}" alt="Before">
 							</div>
