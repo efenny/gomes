@@ -268,27 +268,77 @@ window.onload = function() {
 
 	detectIE();
 
+
+	// function scrollVideos(){
+
+	//     //gett all the video elements on the document
+	//     var vids = document.getElementsByClassName('_autoplay_vid'); 
+	    
+	//     //loop through all the video elements
+	//     for (var i = vids.length - 1; i >= 0; i--) {
+	//     	//pause all the videos by default
+	//     	vids[i].pause();
+	//     }
+	    
+	//     //triger an anonymous function that handles the playy, pause video actions
+	//     window.onscroll = function(){
+	//         for (var i = vids.length - 1; i >= 0; i--) {
+	            
+	//             //get current scrol position
+	//             var currentYpos = window.pageYOffset || document.documentElement.scrollTop;
+	//             // console.log(currentYpos);
+	//             console.log(vids[i].offsetTop);
+	//             // console.log(vids[i].offsetHeight);
+	            
+	//     		if ( currentYpos >= vids[i].offsetTop 
+	//     		    && currentYpos <= vids[i].offsetTop + vids[i].offsetHeight 
+	//     		   ) {
+	//     		    //Play video if the current scroll position 
+	//     		    //is between the top and bottom of the video element
+	//     			vids[i].play();
+	//     		}else{
+	//     		    //else pause the video 
+	//     			vids[i].pause();
+	//     		}
+	//     	}
+	//     };
+	// };
+
+
+	// scrollVideos();
+
+
 	// Get media - with autoplay disabled (audio or video)
-    var media = jQuery('video').not("[autoplay='autoplay']");
-    var tolerancePixel = 300;
+    // var media = jQuery('video').not("[autoplay='autoplay']");
+    // var tolerancePixel = 300;
 
-    function checkMedia(){
-        // Get current browser top and bottom
-        var scrollTop = jQuery(window).scrollTop() + tolerancePixel;
-        var scrollBottom = jQuery(window).scrollTop() + jQuery(window).height() - tolerancePixel;
+    // function checkMedia(){
 
-        media.each(function(index, el) {
-            var yTopMedia = jQuery(this).offset().top;
-            var yBottomMedia = jQuery(this).height() + yTopMedia;
+    // 	if (jQuery(window).width() > 1024){
+	   //      // Get current browser top and bottom
+	   //      // console.log('dank');
+	   //      var scrollTop = jQuery(window).scrollTop() + tolerancePixel;
+	   //      var scrollBottom = jQuery(window).scrollTop() + jQuery(window).height() - tolerancePixel;
 
-            if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
-                jQuery(this).get(0).play();
-            } else {
-                jQuery(this).get(0).pause();
-            }
-        });
+	   //      media.each(function(index, el) {
+	   //          var yTopMedia = jQuery(this).offset().top;
+	   //          var yBottomMedia = jQuery(this).height() + yTopMedia;
 
-        //}
-    }
-    jQuery(document).on('scroll', checkMedia);
+	   //          if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
+	   //              jQuery(this).get(0).play();
+	   //          } else {
+	   //              jQuery(this).get(0).pause();
+	   //          }
+	   //      });
+
+	   //  }
+	   //  else {
+	   //      media.each(function() {
+	   //          this.setAttribute("autoplay", "");
+	   //      });
+	   //  }
+        
+    //     //}
+    // }
+    // jQuery(document).on('scroll', checkMedia);
 }
